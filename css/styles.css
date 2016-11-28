@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "trilce";
+  src:url("fonts/trilce.eot");
+  src:url("fonts/trilce.eot?#iefix") format("embedded-opentype"),
+    url("fonts/trilce.woff") format("woff"),
+    url("fonts/trilce.ttf") format("truetype"),
+    url("fonts/trilce.svg#trilce") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "trilce" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "trilce" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dots:before {
+  content: "\65";
+}
+.icon-bars:before {
+  content: "\68";
+}
+.icon-exit:before {
+  content: "\61";
+}
+.icon-home:before {
+  content: "\62";
+}
+.icon-add:before {
+  content: "\63";
+}
