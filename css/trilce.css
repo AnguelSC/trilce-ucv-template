@@ -8,7 +8,7 @@ body{
 }
 header{
     position: fixed;
-    height: 45px;
+    height: 40px;
     background: #052747;
     left: 0;
     right: 0;
@@ -32,8 +32,8 @@ header > nav > ul > li:first-child > a{
     padding:0;
     color:#fff;
     font-size: 20px;
-    line-height: 45px;
-    height: 45px;
+    line-height: 40px;
+    height: 40px;
     text-align: center;
     margin:0;
 }
@@ -42,7 +42,7 @@ header > nav > ul > li:first-child > a{
     position: absolute;
     background: #0771B1;
     width: 240px;
-    top: 45px;
+    top: 40px;
     bottom: 0;
 }
 #menu-base{
@@ -63,7 +63,8 @@ header > nav > ul > li:first-child > a{
     font-size: 12px;
     font-weight: 500;
     border-top: 1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid #EA2027;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    /*border-bottom: 1px solid #EA2027;*/
 }
 #menu-base > li > a:after{
     position: absolute;
@@ -115,6 +116,7 @@ header > nav > ul > li:first-child > a{
 }
 
 .opcion-secundario{
+    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -123,12 +125,16 @@ header > nav > ul > li:first-child > a{
     display: inline-block;
     vertical-align: top;
 }
+.opcion-secundario > li:hover > .sub-menu-secundario{
+    display: block;
+}
 .opcion-secundario > li a{
     display: block;
-    height: 45px;
-    line-height: 45px;
+    height: 40px;
+    line-height: 40px;
     color:#fff;
     padding: 0 10px;
+    font-size: 13px;
     text-decoration: none;
 }
 .opcion-secundario > li.icon:nth-child(1) > a,
@@ -148,13 +154,65 @@ header > nav > ul > li:first-child > a{
     position: absolute;
     right: 0;
     top: 0;
-    height: 45px;
+    height: 40px;
+}
+.sub-menu-secundario{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 4px;
+    right: 0;
+    margin: 0;
+    padding: 0;
+}
+.sub-menu-secundario > li{
+    display: inline-block;
+    margin-left: -4px;
+    border-bottom:2px solid #0771B1;
+}
+.sub-menu-secundario > li > a{
+    height: 25px;
+    line-height: 25px;
+    padding-left: 15px;
+    display: block;
+    font-size: 11px;
+    color:#0771B1;
+}
+.sub-menu-secundario > li:hover{
+}
+.sub-menu-secundario > li:hover > a{
+    background:#0771B1;
+    color: #fff;
 }
 #contenido{
     position: absolute;
-    left: 250px;
+    left: 240px;
     background: #F2F2F2;
-    top: 45px;
+    top: 40px;
     bottom: 0;
-    width: auto;
+    right: 0;
+    padding-top: 10px;
+}
+
+.form-control{
+    border-radius: 2px;
+    height: 28px;
+}
+.panel-heading{
+    background: #0771B1;
+    color:#fff;
+    border:1px solid #0771B1;
+}
+.table thead{
+    background: #052747;
+    color:#fff;
+    
+}
+.table th{
+    padding: 4px !important;
+    font-weight: normal;
+    text-align: center;
+}
+.table td{
+    padding: 3px !important;
 }
