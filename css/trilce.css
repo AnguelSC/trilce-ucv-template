@@ -1,3 +1,4 @@
+@import url('bootstrap.css');
 @import url('styles.css');
 @font-face{
     font-family: 'Roboto-Normal';
@@ -40,10 +41,11 @@ header > nav > ul > li:first-child > a{
 
 #menu-primario{
     position: absolute;
-    background: #0771B1;
+    background: #fff;
     width: 240px;
     top: 40px;
     bottom: 0;
+    border-right: 1px solid #ddd;
 }
 #menu-base{
     margin:0;
@@ -55,10 +57,11 @@ header > nav > ul > li:first-child > a{
 #menu-base > li > a{
     position: relative;
     display: block;
-    color:#fff;
+    color:#000;
+    background:#eee;
     padding: 0 10px;
-    height: 35px;
-    line-height: 35px;
+    height: 30px;
+    line-height: 30px;
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
@@ -74,12 +77,13 @@ header > nav > ul > li:first-child > a{
     top: 0px;
     padding-top: 2px;
     font-size: 14px;
-    height: 35px;
-    line-height: 35px;
+    height: 30px;
+    line-height: 30px;
 }
 #menu-base > li > a:hover,
 #menu-base > li.active > a{
-    background: #EA2027;
+    background: #0771B1;
+    color: #fff;
 }
 .sub-menu{
     list-style: none;
@@ -93,22 +97,23 @@ header > nav > ul > li:first-child > a{
     position: absolute;
     content: "\66";
     font-family: "trilce" !important;
-    height: 35px;
-    line-height: 35px;
+    height: 25px;
+    line-height: 25px;
     left: 5px;
     padding-top: 2px;
-    color: #fff;
+    color: #0771B1;
 }
+.sub-menu > li:hover > a,
 .sub-menu > li:hover:before{
     color:#EA2027;
 }
 .sub-menu > li > a{
     position: relative;
     display: block;
-    color:#fff;
+    color:#0771B1;
     padding: 0 10px;
-    height: 35px;
-    line-height: 35px;
+    height: 25px;
+    line-height: 25px;
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
@@ -194,18 +199,34 @@ header > nav > ul > li:first-child > a{
     padding-top: 10px;
 }
 
+
+
+/*-----COMPONENTES ---------*/
 .form-control{
     border-radius: 2px;
     height: 28px;
 }
+textarea{
+    resize: none;
+}
+.form-group label{
+    font-weight: normal;
+    font-size: 13px;
+    color:#999;
+}
+/*---PANELES-------*/
 .panel-heading{
     background: #0771B1;
     color:#fff;
     border:1px solid #0771B1;
 }
+.panel-footer{
+    padding: 4px;
+}
+/*---PANELES-------*/
 .table thead{
-    background: #052747;
-    color:#fff;
+    background: #eee;
+    color:#000;
     
 }
 .table th{
@@ -215,4 +236,13 @@ header > nav > ul > li:first-child > a{
 }
 .table td{
     padding: 3px !important;
+}
+/*----BOTONES----*/
+.btn{
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.btn.btn-primary{
+    background: #0771B1;
 }
