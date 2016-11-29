@@ -14,6 +14,7 @@ header{
     left: 0;
     right: 0;
     color:#fff;
+    z-index: 20;
 }
 header > nav > ul{
     padding: 0;
@@ -127,6 +128,7 @@ header > nav > ul > li:first-child > a{
     padding: 0;
 }
 .opcion-secundario > li{
+    position: relative;
     display: inline-block;
     vertical-align: top;
 }
@@ -165,28 +167,29 @@ header > nav > ul > li:first-child > a{
     display: none;
     position: absolute;
     top: 40px;
-    left: 4px;
-    right: 0;
+    left: 0;
+    width: auto;
     margin: 0;
     padding: 0;
+    z-index: 100;
 }
 .sub-menu-secundario > li{
-    display: inline-block;
-    margin-left: -4px;
-    border-bottom:2px solid #0771B1;
+    display: block;
 }
 .sub-menu-secundario > li > a{
-    height: 25px;
-    line-height: 25px;
-    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
     display: block;
     font-size: 11px;
-    color:#0771B1;
+    color:#fff;
+    min-width: 200px;
+    background: #0771B1;
 }
 .sub-menu-secundario > li:hover{
 }
 .sub-menu-secundario > li:hover > a{
-    background:#0771B1;
+    background:#052747;
     color: #fff;
 }
 #contenido{
@@ -197,6 +200,7 @@ header > nav > ul > li:first-child > a{
     bottom: 0;
     right: 0;
     padding-top: 10px;
+    z-index: 1;
 }
 
 
@@ -236,6 +240,34 @@ textarea{
 }
 .table td{
     padding: 3px !important;
+}
+
+
+.checkbox-style{
+    position: relative;
+    margin:0 auto;
+}
+.checkbox-style > input[type=checkbox]:checked + label:before{
+    background: #0771B1;
+}
+
+.checkbox-style > label{
+    display: block;
+    padding-top:3px;
+}
+.checkbox-style > label:before{
+    position: relative;
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin:0 auto;
+    border:1px solid #0771B1;
+    border-radius: 2px;
+}
+.checkbox-style > input[type=checkbox]{
+    display: none;
 }
 /*----BOTONES----*/
 .btn{
