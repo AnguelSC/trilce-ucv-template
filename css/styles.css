@@ -53,3 +53,9 @@
 .icon-add:before {
   content: "\63";
 }
+.icon-angle-right:before {
+  content: "\64";
+}
+.icon-caret-right:before {
+  content: "\66";
+}

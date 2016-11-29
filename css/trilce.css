@@ -81,7 +81,25 @@ header > nav > ul > li:first-child > a{
     background: #EA2027;
 }
 .sub-menu{
-    
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.sub-menu > li{
+    position: relative;
+}
+.sub-menu > li:before{
+    position: absolute;
+    content: "\66";
+    font-family: "trilce" !important;
+    height: 35px;
+    line-height: 35px;
+    left: 5px;
+    padding-top: 2px;
+    color: #fff;
+}
+.sub-menu > li:hover:before{
+    color:#EA2027;
 }
 .sub-menu > li > a{
     position: relative;
@@ -93,6 +111,7 @@ header > nav > ul > li:first-child > a{
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
+    padding-left:20px;
 }
 
 .opcion-secundario{
