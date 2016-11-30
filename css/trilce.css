@@ -72,7 +72,7 @@ header > nav > ul > li:first-child > a{
 }
 #menu-base > li > a:after{
     position: absolute;
-    content: "\6e";
+    content: "\66";
     font-family: "trilce" !important;
     right: 10px;
     top: 0px;
@@ -226,6 +226,12 @@ textarea{
     color:#fff;
     border:1px solid #0771B1;
 }
+.panel-heading .form-control{   
+    height: 22px;
+    text-align:center;
+    font-size: 11px;
+    padding: 4px;
+}
 .panel-body{
     position: relative;
 }
@@ -250,12 +256,16 @@ textarea{
     font-size: 12px;
 }
 .table tr.col-input > td{
-    height: 24px;
-    line-height: 24px;
+    height: 28px;
+    line-height: 28px;
 }
 .table .form-control{
-    height: 24px;
+    height: 28px;
     text-align:center;
+    font-size: 12px;
+}
+.table select.form-control{
+    padding: 0;
 }
 /*--------CHECKBOX-----------*/
 .checkbox-style{
