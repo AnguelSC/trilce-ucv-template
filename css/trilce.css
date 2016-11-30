@@ -202,6 +202,7 @@ header > nav > ul > li:first-child > a{
     z-index: 1;
     padding-left: 15px;
     padding-right: 15px; 
+    overflow-x: auto;
 }
 
 
@@ -241,14 +242,20 @@ textarea{
     padding: 4px !important;
     font-weight: normal;
     text-align: center;
+    vertical-align: middle !important;
+    font-size: 12px;
 }
 .table td{
     padding: 3px !important;
-    font-size: 13px;
-    vertical-align: middle;
+    font-size: 12px;
+}
+.table tr.col-input > td{
+    height: 24px;
+    line-height: 24px;
 }
 .table .form-control{
     height: 24px;
+    text-align:center;
 }
 /*--------CHECKBOX-----------*/
 .checkbox-style{
