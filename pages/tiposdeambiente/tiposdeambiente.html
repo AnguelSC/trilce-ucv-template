@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TRILCE</title>
+            <link href="css/trilce.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav id="menu-secundario">
+                <ul>
+                    <li>
+                        <a href="#">TRILCE</a>
+                    </li>
+                    <li>
+                        <ul class="opcion-secundario">
+                            <li class="icon"><a href="#"><i class="icon-bars"></i></a></li>
+                            <li class="icon"><a href="#"><i class="icon-home"></i></a></li>
+                            <li><a href="#">DATOS PERSONAL</a></li>
+                            <li>
+                                <a href="#">OPCION 01</a>
+                                <ul class="sub-menu-secundario">
+                                    <li><a href="#">SUB MENÚ 1</a></li>
+                                    <li><a href="#">SUB MENÚ 2</a></li>
+                                    <li><a href="#">SUB MENÚ 3</a></li>
+                                    <li><a href="#">SUB MENÚ 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">OPCION 02</a></li>
+                            <li><a href="#">OPCION 03</a></li>
+                            <li><a href="#">OPCION 04</a></li>
+                            <li><a href="#">OPCION 05</a></li>
+                        </ul>
+                        <span class="opcion-personal">
+                            <ul class="opcion-secundario">
+                                <li><a href="#">ANGEL SIRLOPÚ</a></li>
+                                <li class="icon"><a href="#"><i class="icon-exit"></i></a></li>
+                            </ul>
+                        </span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <nav id="menu-primario">
+                <ul id="menu-base">
+                    <li>
+                        <a href="#">Servicios Académicos Posgrado</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios Académicos</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios Estudiantiles</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Sistema de Información Estratégica</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="contenido">
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-heading">PROCESO DE REGISTRO</div>
+                        <div class="panel-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">TITULO:</label>
+                                            <input class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">TITULO:</label>
+                                            <select class="form-control">
+                                                <option>--SELECCIONE --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">TITULO:</label>
+                                            <select class="form-control">
+                                                <option>--SELECCIONE --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">TITULO:</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="radio-style">
+                                                    <input type="radio" name="radio" id="radio">
+                                                    <label for="radio">Aceptar termino</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="radio-style">
+                                                    <input type="radio" name="radio" id="radio2">
+                                                    <label for="radio2">Aceptar termino</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary">ENVIAR</button>
+                            <button class="btn btn-default">CANCELAR</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading">CARGANDO INFORMACIÓN</div>
+                        <div class="panel-body" style="height:300px;">
+                            <div class="loading">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel">
+                        <div class="panel-heading">CONFIGURACIÓN DE PORTAL</div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>OPCIÓN 1</th>
+                                    <th width="100px">OPCIÓN 2</th>
+                                    <th width="70px">GERARQUIA</th>
+                                    <th width="100px">ACCIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event1">
+                                            <label for="event1"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event2">
+                                            <label for="event2"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event3">
+                                            <label for="event3"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event4">
+                                            <label for="event4"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event5">
+                                            <label for="event5"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event6">
+                                            <label for="event6"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event7">
+                                            <label for="event7"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control" value="200"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger btn-xs"><i class="icon-trash-bin"></i></a>
+                                        <a href="#" class="btn btn-default btn-xs"><i class="icon-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Opcion 01</option>
+                                            <option>Opcion 02</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary">ENVIAR</button>
+                            <button class="btn btn-default">CANCELAR</button>
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary"><i class="icon-angle-left"></i></a>
+                                    <a href="#" class="btn btn-default">1</a>
+                                    <a href="#" class="btn btn-default">2</a>
+                                    <a href="#" class="btn btn-default">3</a>
+                                    <a href="#" class="btn btn-default">4</a>
+                                    <a href="#" class="btn btn-default">5</a>
+                                    <a href="#" class="btn btn-primary"><i class="icon-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
