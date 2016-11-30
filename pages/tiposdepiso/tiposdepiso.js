@@ -1,16 +1,25 @@
 (function(){
   var datosPiso = [];
+
+  //Elementos DOM
   var botonesEditar = document.getElementsByClassName('editar');
-  console.log(botonesEditar);
   var tableData = document.getElementById("tiposdepiso");
-  console.log(tableData);
+
+  //Piso en Edicion
+  var pisoEditando = [];
+
   for (var i = 0; i < botonesEditar.length; i++) {
     botonesEditar[i].addEventListener("click",function(evt){
       var filaPiso = document.getElementById("tiposdepiso").rows[evt.target.parentElement.parentElement.rowIndex];
+      document.getElementById("tiposdepiso").rows[evt.target.parentElement.parentElement.rowIndex].innerHTML = "<td class='col-md-1'>" +filaPiso.childNodes[1].innerHTML +"</td>"+
+      "<td class='col-md-3'><input class='form-control' value='"+filaPiso.childNodes[3].innerHTML+"' /></td>"+
+      "<td class='col-md-3'><input class='form-control' value='"+filaPiso.childNodes[5].innerHTML+"' /></td>"+
+      "<td class='col-md-3'><button class='btn btn-default' onclick='guardar(this)'>💾</button><button class='btn btn-default' onclick='cancelar(this)'>💾</button></td>";
+      pisoEditando = [filaPiso.childNodes[1].innerHTML,filaPiso.childNodes[3].innerHTML];
 
-      document.getElementById("tiposdepiso").rows[evt.target.parentElement.parentElement.rowIndex].innerHTML = "<td>" +filaPiso.childNodes[1].innerHTML +
-      "</td><td><input value='"+filaPiso.childNodes[3].innerHTML+"' /></td><td><input value='"+filaPiso.childNodes[5].innerHTML+"' /><td><button class'btn editar btn-default'>💾</button></td>";
-      //
     });
+  }
+  function guardar(boton){
+    console.log(boton);
   }
 })();
