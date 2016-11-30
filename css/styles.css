@@ -38,9 +38,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-dots:before {
-  content: "\65";
-}
 .icon-bars:before {
   content: "\68";
 }
@@ -50,12 +47,27 @@
 .icon-home:before {
   content: "\62";
 }
-.icon-add:before {
+.icon-trash-bin:before {
   content: "\63";
 }
-.icon-angle-right:before {
+.icon-pencil:before {
   content: "\64";
 }
-.icon-caret-right:before {
+.icon-caret-down:before {
   content: "\66";
+}
+.icon-angle-left:before {
+  content: "\6a";
+}
+.icon-angle-right:before {
+  content: "\6b";
+}
+.icon-android-done:before {
+  content: "\6c";
+}
+.icon-ios-minus-empty:before {
+  content: "\6d";
+}
+.icon-android-add:before {
+  content: "\6e";
 }

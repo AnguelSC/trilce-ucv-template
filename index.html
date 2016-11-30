@@ -119,22 +119,55 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="radio-style">
+                                                    <input type="radio" name="radio" id="radio">
+                                                    <label for="radio">Aceptar termino</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="radio-style">
+                                                    <input type="radio" name="radio" id="radio2">
+                                                    <label for="radio2">Aceptar termino</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary">ENVIAR</button>
-                            <button class="btn btn-default">ENVIAR</button>
+                            <button class="btn btn-default">CANCELAR</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-heading">CARGANDO INFORMACIÓN</div>
+                        <div class="panel-body" style="height:300px;">
+                            <div class="loading">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-5">
                     <div class="panel">
                         <div class="panel-heading">CONFIGURACIÓN DE PORTAL</div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ITEM</th>
+                                    <th>ID</th>
                                     <th>OPCIÓN 1</th>
                                     <th>OPCIÓN 2</th>
                                     <th>ACCIÓN</th>
@@ -176,8 +209,45 @@
                                     <td><input class="form-control"></td>
                                     <td>Contenido</td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event3">
+                                            <label for="event3"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control"></td>
+                                    <td>Contenido</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-style">
+                                            <input type="checkbox" id="event4">
+                                            <label for="event4"></label>
+                                        </div>
+                                    </td>
+                                    <td>Contenido</td>
+                                    <td><input class="form-control"></td>
+                                    <td>Contenido</td>
+                                </tr>
                             </tbody>
                         </table>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary">ENVIAR</button>
+                            <button class="btn btn-default">CANCELAR</button>
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary"><i class="icon-angle-left"></i></a>
+                                    <a href="#" class="btn btn-default">1</a>
+                                    <a href="#" class="btn btn-default">2</a>
+                                    <a href="#" class="btn btn-default">3</a>
+                                    <a href="#" class="btn btn-default">4</a>
+                                    <a href="#" class="btn btn-default">5</a>
+                                    <a href="#" class="btn btn-primary"><i class="icon-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
