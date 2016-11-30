@@ -323,8 +323,8 @@ textarea{
 
 /*----BOTONES----*/
 .btn{
-    padding: 4px 10px;
-    font-size: 13px;
+   /* padding: 4px 10px;
+    font-size: 13px;*/
 }
 
 .btn.btn-primary{
@@ -379,3 +379,12 @@ textarea{
   }
 }
 /*--------PROGRESS----------------*/
+.table-scroll{
+    
+}
+.table-scroll > tbody{
+    height: 80vh;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
