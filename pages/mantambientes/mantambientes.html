@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TRILCE</title>
+        <link href="../../css/trilce.css" rel="stylesheet">
+        <link href="tiposdepiso.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav id="menu-secundario">
+                <ul>
+                    <li>
+                        <a href="#">TRILCE</a>
+                    </li>
+                    <li>
+                        <ul class="opcion-secundario">
+                            <li class="icon"><a href="#"><i class="icon-bars"></i></a></li>
+                            <li class="icon"><a href="#"><i class="icon-home"></i></a></li>
+                            <li><a href="#">DATOS PERSONAL</a></li>
+                            <li>
+                                <a href="#">OPCION 01</a>
+                                <ul class="sub-menu-secundario">
+                                    <li><a href="#">SUB MENÚ 1</a></li>
+                                    <li><a href="#">SUB MENÚ 2</a></li>
+                                    <li><a href="#">SUB MENÚ 3</a></li>
+                                    <li><a href="#">SUB MENÚ 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">OPCION 02</a></li>
+                            <li><a href="#">OPCION 03</a></li>
+                            <li><a href="#">OPCION 04</a></li>
+                            <li><a href="#">OPCION 05</a></li>
+                        </ul>
+                        <span class="opcion-personal">
+                            <ul class="opcion-secundario">
+                                <li><a href="#">ADRIAN RUIZ</a></li>
+                                <li class="icon"><a href="#"><i class="icon-exit"></i></a></li>
+                            </ul>
+                        </span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <nav id="menu-primario">
+                <ul id="menu-base">
+                    <li>
+                        <a href="#">Servicios Académicos Posgrado</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios Académicos</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios Estudiantiles</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Sistema de Información Estratégica</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="contenido">
+                <div class="col-md-5">
+                    <div class="panel">
+                        <div class="panel-heading">MANTENIMIENTO DE TIPOS DE PISO</div>
+                        <table id="tiposdepiso" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-1" >ID</th></div>
+                                    <th class="col-md-3" >NOMBRE</th></div>
+                                    <th class="col-md-3" >ACTIVO</th></div>
+                                    <th class="col-md-3" >📂 Accion</th></div>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="col-input">
+                                    <td class="col-md-1">1</td>
+                                    <td class="col-md-3">PISO 1</td>
+                                    <td class="col-md-3">SI</td>
+                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td class="col-md-1">2</td>
+                                    <td class="col-md-3">PISO 2</td>
+                                    <td class="col-md-3">no</td>
+                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td class="col-md-1">3</td>
+                                    <td class="col-md-3">PISO 3</td>
+                                    <td class="col-md-3">SI</td>
+                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
+                                </tr>
+                                <tr class="col-input">
+                                    <td class="col-md-1">4</td>
+                                    <td class="col-md-3">PISO 4</td>
+                                    <td class="col-md-3">SI</td>
+                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary" onclick="nuevo()">NUEVO</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <script type="text/javascript" src="tiposdepiso.js"></script>
+</html>

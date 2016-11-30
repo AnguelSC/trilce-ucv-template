@@ -201,7 +201,7 @@ header > nav > ul > li:first-child > a{
     padding-top: 10px;
     z-index: 1;
     padding-left: 15px;
-    padding-right: 15px; 
+    padding-right: 15px;
     overflow-x: auto;
 }
 
@@ -226,7 +226,7 @@ textarea{
     color:#fff;
     border:1px solid #0771B1;
 }
-.panel-heading .form-control{   
+.panel-heading .form-control{
     height: 22px;
     text-align:center;
     font-size: 11px;
@@ -242,7 +242,7 @@ textarea{
 .table thead{
     background: #eee;
     color:#000;
-    
+
 }
 .table th{
     padding: 4px !important;
@@ -380,21 +380,86 @@ textarea{
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  } 40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
 }
 /*--------PROGRESS----------------*/
 .table-scroll{
-    
+
 }
 .table-scroll > tbody{
     height: 80vh;
     overflow: auto;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+/*--------TREE---------------------*/
+.tree, .tree ul {
+    margin:0;
+    padding:0;
+    list-style:none
+}
+.tree ul {
+    margin-left:1em;
+    position:relative
+}
+.tree ul ul {
+    margin-left:.5em
+}
+.tree ul:before {
+    content:"";
+    display:block;
+    width:0;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    border-left:1px solid
+}
+.tree li {
+    margin:0;
+    padding:0 1em;
+    line-height:2em;
+    color:#369;
+    font-weight:700;
+    position:relative
+}
+.tree ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    border-top:1px solid;
+    margin-top:-1px;
+    position:absolute;
+    top:1em;
+    left:0
+}
+.tree ul li:last-child:before {
+    background:#fff;
+    height:auto;
+    top:1em;
+    bottom:0
+}
+.indicator {
+    margin-right:5px;
+}
+.tree li a {
+    text-decoration: none;
+    color:#369;
+}
+.tree li button, .tree li button:active, .tree li button:focus {
+    text-decoration: none;
+    color:#369;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
 }
