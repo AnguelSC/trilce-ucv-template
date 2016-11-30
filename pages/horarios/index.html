@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TRILCE</title>
+            <link href="../../css/trilce.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav id="menu-secundario">
+                <ul>
+                    <li>
+                        <a href="#">TRILCE</a>
+                    </li>
+                    <li>
+                        <ul class="opcion-secundario">
+                            <li class="icon"><a href="#"><i class="icon-bars"></i></a></li>
+                            <li class="icon"><a href="#"><i class="icon-home"></i></a></li>
+                            <li><a href="#">DATOS PERSONAL</a></li>
+                            <li>
+                                <a href="#">OPCION 01</a>
+                                <ul class="sub-menu-secundario">
+                                    <li><a href="#">SUB MENÚ 1</a></li>
+                                    <li><a href="#">SUB MENÚ 2</a></li>
+                                    <li><a href="#">SUB MENÚ 3</a></li>
+                                    <li><a href="#">SUB MENÚ 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">OPCION 02</a></li>
+                            <li><a href="#">OPCION 03</a></li>
+                            <li><a href="#">OPCION 04</a></li>
+                            <li><a href="#">OPCION 05</a></li>
+                        </ul>
+                        <span class="opcion-personal">
+                            <ul class="opcion-secundario">
+                                <li><a href="#">ANGEL SIRLOPÚ</a></li>
+                                <li class="icon"><a href="#"><i class="icon-exit"></i></a></li>
+                            </ul>
+                        </span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <nav id="menu-primario">
+                <ul id="menu-base">
+                    <li>
+                        <a href="#">Servicios Académicos Posgrado</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul> 
+                    </li>
+                    <li>
+                        <a href="#">Servicios Académicos</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul> 
+                    </li>
+                    <li>
+                        <a href="#">Servicios Estudiantiles</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul> 
+                    </li>
+                    <li>
+                        <a href="#">Sistema de Información Estratégica</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Registros Académicos</a></li>
+                            <li><a href="#">Horarios</a></li>
+                            <li><a href="#">Admisión</a></li>
+                        </ul> 
+                    </li>
+                </ul>
+            </nav>
+            <section id="contenido">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel">
+                            <div class="panel-heading">PROCESO DE REGISTRO</div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Filial:</label>
+                                                <select id="ddlFilial" class="form-control">
+                                                   <option value="-1">- Seleccione Filial -</option>
+                                                   <option value="1000098770">UCV CAMPUS TRUJILLO</option>
+                                                   <option value="1000114557">UCV CAMPUS PIURA</option>
+                                                   <option value="1000003204">UCV CAMPUS CHICLAYO</option>
+                                                   <option value="1000136996">UCV CAMPUS TARAPOTO</option>
+                                                   <option value="1000147917">UCV CAMPUS CHIMBOTE</option>
+                                                   <option value="1000095671">UCV CAMPUS LIMA NORTE</option>
+                                                   <option value="6500000000">UCV CAMPUS LIMA ESTE</option>
+                                                   <option value="6600000000">UCV CAMPUS ATE VITARTE</option>
+                                                   <option value="6700000000">UCV CAMPUS CALLAO</option>
+                                                   <option value="6800000000">UCV CAMPUS HUARAZ</option>
+                                                   <option value="6900000000">UCV CAMPUS MOYOBAMBA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Tipo Plan:</label>
+                                                <select id="ddlTipoPlan" class="form-control">
+                                                   <option value="-1">- Seleccione Tipo de Plan -</option>
+                                                   <optgroup id="optgroup1" label="PREGRADO">
+                                                      <option value="1">PREGRADO (Curricular)</option>
+                                                      <option value="99">ELECTIVOS</option>
+                                                   </optgroup>
+                                                   <optgroup id="optgroup2" label="ESPECIAL">
+                                                      <option value="80">PREGRADO (FPA)</option>
+                                                   </optgroup>
+                                                   <optgroup id="optgroup3" label="POSTGRADO">
+                                                      <option value="3">POST GRADO (Curricular)</option>
+                                                   </optgroup>
+                                                   <optgroup id="optgroup4" label="CENTROS PRODUCTIVOS"></optgroup>
+                                                   <optgroup id="41" label="&nbsp;&nbsp;PROGRAMA INTERNO">
+                                                      <option value="2">PREGRADO (Extra curricular)</option>
+                                                      <option value="4">POST GRADO (Extra Curricular)</option>
+                                                      <option value="6">TITULACION</option>
+                                                   </optgroup>
+                                                   <optgroup id="42" label="&nbsp;&nbsp;PROGRAMA EXTERNO">
+                                                      <option value="10">DIPLOMADO</option>
+                                                      <option value="20">ESPECIALIZACION</option>
+                                                      <option value="50">COMPUKIDS</option>
+                                                      <option value="60">CICLO ALFA</option>
+                                                      <option value="90">SEMINARIOS</option>
+                                                   </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Escuela:</label>
+                                                <select id="ddlEscuelas" class="form-control">
+                                                   <option value="-1">- Seleccione Escuela -</option>
+                                                   <option value="1000003214"> ADMINISTRACIÓN EN TURISMO Y HOTELERIA</option>
+                                                   <option value="1000003213"> ENFERMERÍA</option>
+                                                   <option value="1000003216"> INGENIERIA AGROINDUSTRIAL Y COMERCIO EXTERIOR</option>
+                                                   <option value="30042"> INGENIERIA DE SISTEMAS</option>
+                                                   <option value="1000003211"> NUTRICIÓN</option>
+                                                   <option value="1000003210"> OBSTETRICIA</option>
+                                                   <option value="30000031">ACTIVIDADES INTEGRADORAS</option>
+                                                   <option value="30024">ADMINISTRACIÓN</option>
+                                                   <option value="30000019">ADMINISTRACIÓN PÚBLICA</option>
+                                                   <option value="30000028">ADMINISTRACIÓN Y LOGÍSTICA</option>
+                                                   <option value="1000003219">ARTE &amp; DISEÑO GRÁFICO EMPRESARIAL</option>
+                                                   <option value="2013">CIENCIAS DE LA COMUNICACIÓN</option>
+                                                   <option value="30000016">CIENCIAS DEL DEPORTE</option>
+                                                   <option value="30035">CONTABILIDAD</option>
+                                                   <option value="30026">DERECHO</option>
+                                                   <option value="30000009">ECONOMÍA</option>
+                                                   <option value="2016">EDUCACIÓN EN IDIOMAS</option>
+                                                   <option value="2045">EDUCACIÓN INICIAL</option>
+                                                   <option value="2046">EDUCACIÓN PRIMARIA</option>
+                                                   <option value="1000003218">ESCUELA DE ARQUITECTURA</option>
+                                                   <option value="30036">ESCUELA DE MARKETING Y NEGOCIOS INTERNACIONALES</option>
+                                                   <option value="30041">ESCUELA EDUCACION SECUNDARIA</option>
+                                                   <option value="1000003212">ESTOMATOLOGÍA</option>
+                                                   <option value="30000011">INGENIERÍA AGRÓNOMA</option>
+                                                   <option value="30000012">INGENIERÍA AMBIENTAL</option>
+                                                   <option value="2008">INGENIERÍA CIVIL</option>
+                                                   <option value="30000017">INGENIERÍA DE MINAS</option>
+                                                   <option value="30000010">INGENIERÍA EMPRESARIAL</option>
+                                                   <option value="2009">INGENIERÍA INDUSTRIAL</option>
+                                                   <option value="2010">INGENIERÍA MECÁNICA</option>
+                                                   <option value="30000015">INGENIERÍA MECÁNICA ELÉCTRICA</option>
+                                                   <option value="30000027">INGENIERÍA MULTIMEDIA</option>
+                                                   <option value="30000013">MARKETING Y DIRECCIÓN DE EMPRESAS</option>
+                                                   <option value="1000003209">MEDICINA</option>
+                                                   <option value="1000003215">NEGOCIOS INTERNACIONALES</option>
+                                                   <option value="30038">PSICOLOGÍA</option>
+                                                   <option value="30000018">PSICOLOGÍA ORGANIZACIONAL</option>
+                                                   <option value="30032">TRADUCCIÓN E INTERPRETACIÓN</option>
+                                                   <option value="2012">TURISMO Y NEGOCIOS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Plan:</label>
+                                                <select id="ddlPlan" class="form-control">
+                                                <option value="-1">- Seleccione Plan de Estudio -</option>
+                                                <option value="70000399">A - PREGRADO (Curricular) - (Vigente)</option>
+                                                <option value="70000310">A- PDP - PREGRADO (FPA) - (Vigente)</option>
+                                                <option value="70000465">A1 - PREGRADO (FPA) - (Vigente)</option>
+                                                <option value="300">ADMINISTRACION-PDP - PREGRADO (FPA) - (Vigente)</option>
+                                                <option value="70000869">B - PREGRADO (Curricular) - (Vigente)</option>
+                                                <option value="70001915">C - PREGRADO (Curricular) - (Vigente)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Plan:</label>
+                                                  <select id="ddlPeriodo" class="form-control">
+                                                   <option value="-1" selected="selected">- Seleccione Periodo -</option>
+                                                   <option value="65000331">202202</option>
+                                                   <option value="65000330">202201</option>
+                                                   <option value="70005435">202000</option>
+                                                   <option value="70005434">201902</option>
+                                                   <option value="70005431">201901</option>
+                                                   <option value="70005432">201900</option>
+                                                   <option value="70005430">201802</option>
+                                                   <option value="65000329">201801</option>
+                                                   <option value="70005433">201800</option>
+                                                   <option value="70004423">201702</option>
+                                                   <option value="70004422">201701</option>
+                                                   <option value="70004421">201700</option>
+                                                   <option value="70003704">201602</option>
+                                                   <option value="70003703">201601</option>
+                                                   <option value="70003702">201600</option>
+                                                   <option value="70003701">201502</option>
+                                                   <option value="70003700">201501</option>
+                                                   <option value="70002168">201500</option>
+                                                   <option value="70001250">201402</option>
+                                                   <option value="70001249">201401</option>
+                                                   <option value="70001248">201400</option>
+                                                   <option value="70001113">201302</option>
+                                                   <option value="70001112">201301</option>
+                                                   <option value="70001111">201300</option>
+                                                   <option value="7002331">201202</option>
+                                                   <option value="7002330">201201</option>
+                                                   <option value="7002329">201200</option>
+                                                   <option value="7002328">201102</option>
+                                                   <option value="7002327">201101</option>
+                                                   <option value="7002326">201100</option>
+                                                   <option value="7002325">201002</option>
+                                                   <option value="7002324">201001</option>
+                                                   <option value="7002323">201000</option>
+                                                   <option value="7002322">200902</option>
+                                                   <option value="7002321">200901</option>
+                                                   <option value="7002320">200900</option>
+                                                   <option value="7001746">200802</option>
+                                                   <option value="7000073">200801</option>
+                                                   <option value="7000072">200800</option>
+                                                   <option value="7000069">200702</option>
+                                                   <option value="7000065">200701</option>
+                                                   <option value="7000064">200700</option>
+                                                   <option value="7000060">200602</option>
+                                                   <option value="7000054">200601</option>
+                                                   <option value="7000053">200600</option>
+                                                   <option value="7000050">200502</option>
+                                                   <option value="7000043">200501</option>
+                                                   <option value="7000042">200500</option>
+                                                   <option value="7000039">200402</option>
+                                                   <option value="7000032">200401</option>
+                                                   <option value="7000031">200400</option>
+                                                   <option value="7000028">200302</option>
+                                                   <option value="7000024">200301</option>
+                                                   <option value="7000023">200300</option>
+                                                   <option value="7000020">200202</option>
+                                                   <option value="7000016">200201</option>
+                                                   <option value="7000015">200200</option>
+                                                   <option value="7000014">200102</option>
+                                                   <option value="7000013">200101</option>
+                                                   <option value="7000012">200100</option>
+                                                   <option value="7000011">200002</option>
+                                                   <option value="7000010">200001</option>
+                                                   <option value="7000009">200000</option>
+                                                   <option value="7001745">199907</option>
+                                                   <option value="7000008">199902</option>
+                                                   <option value="7000007">199901</option>
+                                                   <option value="7000006">199900</option>
+                                                   <option value="7000005">199802</option>
+                                                   <option value="7000004">199801</option>
+                                                   <option value="7000003">199800</option>
+                                                   <option value="7000002">199702</option>
+                                                   <option value="7000001">199701</option>
+                                                   <option value="7001717">199700</option>
+                                                   <option value="7001713">199602</option>
+                                                   <option value="7001710">199601</option>
+                                                   <option value="7001707">199600</option>
+                                                   <option value="7001704">199502</option>
+                                                   <option value="7001700">199501</option>
+                                                   <option value="7001696">199500</option>
+                                                   <option value="7001691">199402</option>
+                                                   <option value="7001687">199401</option>
+                                                   <option value="7001685">199400</option>
+                                                   <option value="7001681">199302</option>
+                                                   <option value="7001677">199301</option>
+                                                   <option value="7001673">199300</option>
+                                                   <option value="7001669">199202</option>
+                                                   <option value="7001666">199201</option>
+                                                   <option value="7001744">199000</option>
+                                                   <option value="7001743">190000</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-primary">ENVIAR</button>
+                                <button class="btn btn-default">CANCELAR</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="panel">
+                            <div class="panel-heading">PROYECCIÓN</div>
+                            <table class="table table-bordered table-scroll table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="50px">CICLO</th>
+                                        <th>EXP. CURRICULAR</th>
+                                        <th width="40px">HORAS</th>
+                                        <th width="100px">ALUMNOS PROYECTADOS</th>
+                                        <th width="100px">AULA CAPACIDAD</th>
+                                        <th width="100px">SECCION ESTIMADAS</th>
+                                        <th width="100px">SECCION T. MAÑANA</th>
+                                        <th width="100px">SECCION T. TARDE</th>
+                                        <th width="100px">SECCION T. NOCHE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input info">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
