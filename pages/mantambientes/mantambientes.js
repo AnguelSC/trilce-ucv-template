@@ -4,7 +4,7 @@ var stickBreadcrumbs = " > ";
 function agregarElemento(boton,nivelActual,nivelSiguente){
   //panelHeading
   var spanClick = boton.parentElement.parentElement;
-  console.log(spanClick);
+  //console.log(spanClick);
   document.getElementById('breadcrumbActual').textContent = "AGREGAR NIVEL A: "+spanClick.textContent;
   //Elementos Generales
   document.querySelector('#descripcion').style.display = 'block';
@@ -12,6 +12,8 @@ function agregarElemento(boton,nivelActual,nivelSiguente){
   document.querySelector('#EsVigente input').checked = true;
   document.querySelector('#descripcion input').value = "";
   document.querySelector('#EsVigente input').disabled = true;
+
+
   if(nivelSiguente == 'AMBIENTE'){
     document.querySelector('#tipoAmbiente').style.display = 'block';
     document.querySelector('#categoriaAmbiente').style.display = 'block';
@@ -73,10 +75,12 @@ var ambientes = [
 function editarElemento(boton,nivelActual){
   //panelHeading
   var spanClick = boton.parentElement.parentElement;
-  var returnValue = buscarPorId(boton.parentElement.parentElement.parentElement.id,nivelActual);
-
+  console.log(spanClick);
+  var returnValue = buscarPorId(spanClick.parentElement.id,nivelActual);
   document.getElementById('breadcrumbActual').textContent = "EDITAR NIVEL : "+spanClick.textContent;
   //Elementos Generales
+
+
   document.querySelector('#descripcion').style.display = 'block';
   document.querySelector('#descripcion input').value = spanClick.textContent;
   document.querySelector('#EsVigente').style.display = 'block';
