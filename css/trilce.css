@@ -68,6 +68,11 @@ header > nav > ul > li:first-child > a{
     font-weight: 500;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
     /*border-bottom: 1px solid #EA2027;*/
 }
 #menu-base > li > a:after{
@@ -221,6 +226,9 @@ textarea{
     color:#999;
 }
 /*---PANELES-------*/
+.panel{
+    border:none;
+}
 .panel-heading{
     background: #0771B1;
     color:#fff;
@@ -258,7 +266,10 @@ textarea{
 .table thead{
     background: #eee;
     color:#000;
-
+}
+.table thead.danger{
+    background: #EA2027;
+    color:#FFF;
 }
 .table th{
     padding: 4px !important;
@@ -283,6 +294,9 @@ textarea{
 .table select.form-control{
     padding: 0;
 }
+.table thead tr.thead-mini th{
+    font-size: 11px;
+}
 /*--------CHECKBOX-----------*/
 .checkbox-style{
     position: relative;
@@ -293,7 +307,8 @@ textarea{
 }
 
 .checkbox-style > label{
-    display: inline-block;
+    position: relative;
+    display: block;
     padding-left: 20px;
     margin:0 auto;
     cursor: pointer;
@@ -305,6 +320,7 @@ textarea{
     display: block;
     width: 16px;
     left: 0;
+    top: 0;
     margin: 0 auto;
     text-align: center;
     height: 16px;
@@ -316,6 +332,10 @@ textarea{
 }
 .checkbox-style > input[type=checkbox]{
     display: none;
+}
+table .checkbox-style label:before{
+    right: 0;
+    top: 5px;
 }
 /*--------CHECKBOX-----------*/
 /*--------RADIO-----------*/
@@ -362,7 +382,9 @@ textarea{
     background: #0771B1;
     color: #fff;
 }
-
+/*.btn [class^="icon-"]{
+    padding-top: 8px !important;
+}*/
 /*-------PROGRESS---------------*/
 .loading {
     position: absolute;
@@ -411,15 +433,18 @@ textarea{
   }
 }
 /*--------PROGRESS----------------*/
-.table-scroll{
+/*.table-scroll{
 
+}
+.table-scroll > thead,
+.table-scroll > tbody{
 }
 .table-scroll > tbody{
     height: 80vh;
     overflow: auto;
     overflow-y: auto;
     overflow-x: hidden;
-}
+}*/
 
 /*--------TREE---------------------*/
 .tree, .tree ul {
@@ -484,4 +509,46 @@ textarea{
 .tree li span small{
     color:#ccc;
     font-size: 11px;
+}
+
+.error{
+    position: relative;
+  color: #a94442;
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important:;
+}
+.error:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.error .span:hover:after {
+    background: #111;
+    background: rgba(0,0,0,.8);
+    border-radius: .5em;
+    bottom: 1.35em;
+    color: #fff;
+    /*content: attr(title);*/
+    content: "";
+    display: block;
+    left: 1em;
+    padding: .3em 1em;
+    position: absolute;
+    text-shadow: 0 1px 0 #000;
+    white-space: nowrap;
+    z-index: 98;
+}
+
+.error .span:hover:before {
+    border: solid;
+    border-color: #111 transparent;
+    border-color: rgba(0,0,0,.8) transparent;
+    border-width: .4em .4em 0 .4em;
+    bottom: 1em;
+    content: "";
+    display: block;
+    left: 2em;
+    position: absolute;
+    z-index: 99;
 }
