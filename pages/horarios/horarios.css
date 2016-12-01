@@ -1,5 +1,5 @@
 .tree-block{
     height: 370px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
