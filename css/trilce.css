@@ -293,21 +293,26 @@ textarea{
 }
 
 .checkbox-style > label{
-    display: block;
-    padding-top:3px;
+    display: inline-block;
+    padding-left: 20px;
     margin:0 auto;
+    cursor: pointer;
 }
 .checkbox-style > label:before{
-    position: relative;
+    position: absolute;
     content: "";
     cursor: pointer;
     display: block;
     width: 16px;
+    left: 0;
     margin: 0 auto;
     text-align: center;
     height: 16px;
     border:1px solid #0771B1;
     border-radius: 2px;
+}
+.checkbox-style.no-text{
+    padding-left: 0;
 }
 .checkbox-style > input[type=checkbox]{
     display: none;
