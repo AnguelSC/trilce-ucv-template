@@ -95,3 +95,6 @@
 .icon-floppy-o:before {
   content: "\65";
 }
+.icon-plus:before {
+  content: "\6c";
+}

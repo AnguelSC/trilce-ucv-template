@@ -238,6 +238,20 @@ textarea{
 .panel-footer{
     padding: 8px;
 }
+.pamel-wizard{
+    position: relative;
+    padding-left: 15px;
+}
+.pamel-wizard > span{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    border-radius: 50%;
+    background: #052747;
+}
 /*---PANELES-------*/
 .table thead{
     background: #eee;
@@ -339,6 +353,7 @@ textarea{
 
 .btn.btn-primary{
     background: #0771B1;
+    color: #fff;
 }
 
 /*-------PROGRESS---------------*/
