@@ -450,10 +450,6 @@ textarea{
 .indicator {
     margin-right:5px;
 }
-.tree li a {
-    text-decoration: none;
-    color:#369;
-}
 .tree li button, .tree li button:active, .tree li button:focus {
     text-decoration: none;
     color:#369;
@@ -462,4 +458,11 @@ textarea{
     margin:0px 0px 0px 0px;
     padding:0px 0px 0px 0px;
     outline: 0;
+}
+.tree li span{
+    cursor: pointer;
+}
+.tree li span small{
+    color:#ccc;
+    font-size: 11px;
 }
