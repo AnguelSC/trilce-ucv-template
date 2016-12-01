@@ -86,13 +86,40 @@
                         <div class="panel-heading">AMBIENTES</div>
                         <div class="panel-body  ambiente-block">
                         <ul class="tree">
-                          <li id="1"><span>UCV CAMPUS CHICLAYO <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'FILIAL','LOCAL')" title="Editar"><i class="icon-plus"></i></button></span>
+                          <li id="1"><span>UCV CAMPUS CHICLAYO <div class="btn-group">
+                            <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'FILIAL','LOCAL')" title="Agregar">
+                              <i class="icon-plus"></i>
+                            </button>
+                            <button class="btn btn-xs btn-primary" onclick="editarElemento(this,'FILIAL')" title="Editar">
+                              <i class="icon-pencil"></i>
+                            </button>
+                          </div></span>
                               <ul>
-                                <li id="1"><span>CAMPUS CHICLAYO</span>
+                                <li id="1"><span>CAMPUS CHICLAYO <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'LOCAL','PABELLON')" title="Agregar"><i class="icon-plus"></i></button>
+                                <button class="btn btn-xs btn-primary" onclick="editarElemento(this,'LOCAL')" title="Editar">
+                                  <i class="icon-pencil"></i>
+                                </button>
+                                </div></span>
                                   <ul>
-                                    <li id="1"><span>PABELLON A</span></li>
-                                    <li id="2"><span>PABELLON B</span></li>
-                                    <li id="3"><span>PABELLON C</span></li>
+                                    <li id="1"><span>PABELLON A <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','AMBIENTE')" title="Agregar"><i class="icon-plus"></i></button>
+                                      <button class="btn btn-xs btn-primary" onclick="editarElemento(this,'PABELLON')" title="Editar">
+                                        <i class="icon-pencil"></i>
+                                      </button>
+                                    </div></span>
+                                        <ul>
+                                          <li id="1"><span>PISO 1<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span>
+                                              <ul>
+                                                <li>AULA 1</li>
+                                                <li>LABORATORIO 2</li>
+                                                <li>Of ADMINISTRATIVA OTI</li>
+                                              </ul>
+                                          </li>
+                                          <li id="2"><span>PISO 2<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                          <li id="3"><span>PISO 3<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                        </ul>
+                                    </li>
+                                    <li id="2"><span>PABELLON B <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                    <li id="3"><span>PABELLON C <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
                                   </ul>
                                 </li>
                                 <li id="2"><span>CENTRO DE IDIOMAS</span></li>
@@ -106,11 +133,11 @@
                 </div>
                 <div class="col-md-5">
                     <div class="panel">
-                        <div class="panel-heading">MANTENIMIENTO DE AMBIENTES</div>
+                        <div id="breadcrumbActual" class="panel-heading">AGREGUE UN NIVEL A UN ELEMENTO DEL ARBOL</div>
                         <div class="panel-body ambiente-block">
                           <form>
                               <div class="row">
-                                  <div class="col-md-12">
+                                  <div id="descripcion" class="col-md-12" style="display:none">
                                       <div class="form-group">
                                           <label for="">DESCRIPCION:</label>
                                           <input class="form-control"/>
@@ -118,17 +145,17 @@
                                   </div>
                               </div>
                               <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          <label for="">TITULO:</label>
+                                  <div id="tipoAmbiente" class="col-md-6" style="display:none">
+                                      <div  class="form-group" >
+                                          <label for="">TIPO DE AMBIENTE:</label>
                                           <select class="form-control">
                                               <option>--SELECCIONE --</option>
                                           </select>
                                       </div>
                                   </div>
-                                  <div class="col-md-6">
-                                      <div class="form-group">
-                                          <label for="">TITULO:</label>
+                                  <div id="tipoPiso" class="col-md-6" style="display:none">
+                                      <div class="form-group" >
+                                          <label for="">PISO:</label>
                                           <select class="form-control">
                                               <option>--SELECCIONE --</option>
                                           </select>
@@ -136,20 +163,23 @@
                                   </div>
                               </div>
                               <div class="row">
-                                  <div class="col-md-12">
+                                  <div id="categoriaAmbiente" class="col-md-6" style="display:none">
                                       <div class="form-group">
-                                          <label for="">TITULO:</label>
-                                          <textarea class="form-control"></textarea>
+                                          <label for="">CATEGORIA DE AMBIENTE:</label>
+                                          <select class="form-control">
+                                              <option>--SELECCIONE --</option>
+                                              <option value="1">Academico</option>
+                                              <option value="2">Administrativo</option>
+                                          </select>
                                       </div>
                                   </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
+                                  <div id="EsVigente" class="col-md-6" style="display:none">
                                       <div class="form-group">
+                                        <label for="">ES VIGENTE:</label>
                                           <div class="col-md-12">
                                               <div class="checkbox-style">
-                                                  <input type="checkbox" name="EsVigente" id="EsVigente">
-                                                  <label for="EsVigente">Esta Activo</label>
+                                                  <input type="checkbox" name="checkVigente" id="checkVigente">
+                                                  <label for="checkVigente">Esta Activo</label>
                                               </div>
                                           </div>
                                       </div>
@@ -168,7 +198,7 @@
                           </form>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-primary" onclick="nuevo()">NUEVO</button>
+                            <button class="btn btn-primary" onclick="guardar()">GUARDAR</button>
                         </div>
                     </div>
                 </div>
@@ -177,4 +207,9 @@
     </body>
     <script type="text/javascript" src="mantambientes.js"></script>
     <script type="text/javascript" src="../../js/trilce.js"></script>
+    <script type="text/javascript">
+    (function() {
+     loadCombos();
+    })();
+    </script>
 </html>
