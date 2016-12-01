@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TRILCE</title>
         <link href="../../css/trilce.css" rel="stylesheet">
-        <link href="tiposdepiso.css" rel="stylesheet">
+        <link href="mantambientes.css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -84,42 +84,24 @@
                 <div class="col-md-5">
                     <div class="panel">
                         <div class="panel-heading">MANTENIMIENTO DE TIPOS DE PISO</div>
-                        <table id="tiposdepiso" class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="col-md-1" >ID</th></div>
-                                    <th class="col-md-3" >NOMBRE</th></div>
-                                    <th class="col-md-3" >ACTIVO</th></div>
-                                    <th class="col-md-3" >📂 Accion</th></div>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="col-input">
-                                    <td class="col-md-1">1</td>
-                                    <td class="col-md-3">PISO 1</td>
-                                    <td class="col-md-3">SI</td>
-                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
-                                </tr>
-                                <tr class="col-input">
-                                    <td class="col-md-1">2</td>
-                                    <td class="col-md-3">PISO 2</td>
-                                    <td class="col-md-3">no</td>
-                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
-                                </tr>
-                                <tr class="col-input">
-                                    <td class="col-md-1">3</td>
-                                    <td class="col-md-3">PISO 3</td>
-                                    <td class="col-md-3">SI</td>
-                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
-                                </tr>
-                                <tr class="col-input">
-                                    <td class="col-md-1">4</td>
-                                    <td class="col-md-3">PISO 4</td>
-                                    <td class="col-md-3">SI</td>
-                                    <td class="col-md-3"><button class="btn btn-xs btn-primary" onclick="editar(this)" title="Editar"><i class="icon-pencil"></i></button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="panel-body">
+                        <ul class="tree">
+                          <li><span>UCV CAMPUS CHICLAYO</span>
+                              <ul>
+                                <li><span>CAMPUS CHICLAYO</span>
+                                  <ul>
+                                    <li><span>PABELLON A</span></li>
+                                    <li><span>PABELLON B</span></li>
+                                    <li><span>PABELLON C</span></li>
+                                  </ul>
+                                </li>
+                                <li><span>CENTRO DE IDIOMAS</span></li>
+                              </ul>
+                          </li>
+                          <li><span>UCV CAMPUS TRUJILLO</span></li>
+                          <li><span>UCV CAMPUS LIMA NORTE</span></li>
+                        </ul>
+                        </div>
                         <div class="panel-footer">
                             <button class="btn btn-primary" onclick="nuevo()">NUEVO</button>
                         </div>
@@ -128,5 +110,5 @@
             </section>
         </main>
     </body>
-    <script type="text/javascript" src="tiposdepiso.js"></script>
+    <script type="text/javascript" src="mantambientes.js"></script>
 </html>
