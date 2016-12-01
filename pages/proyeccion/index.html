@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TRILCE</title>
-            <link href="../../css/trilce.css" rel="stylesheet">
+        <link href="../../css/trilce.css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -81,7 +81,7 @@
             </nav>
             <section id="contenido">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 hide" id="frmRegistro">
                         <div class="panel">
                             <div class="panel-heading">PROCESO DE REGISTRO</div>
                             <div class="panel-body">
@@ -360,7 +360,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="">Plan:</label>
+                                                <label for="">Periodo:</label>
                                                   <select id="ddlPeriodo" class="form-control">
                                                    <option value="-1" selected="selected">- Seleccione Periodo -</option>
                                                    <option value="65000331">202202</option>
@@ -459,840 +459,151 @@
                                 </form>
                             </div>
                             <div class="panel-footer">
-                                <button class="btn btn-primary">ENVIAR</button>
+                                <button class="btn btn-primary" onclick="registro()">ENVIAR</button>
                                 <button class="btn btn-default">CANCELAR</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-6" id="tbLista">
+                       <div class="panel">
+                           <table class="table table-bordered">
+                               <thead>
+                                   <tr>
+                                      <th>Filial</th>
+                                       <th>PLAN</th>
+                                       <th>ESCUELA</th>
+                                       <th>PERIODO</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr class="resultTable">
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
                         <div class="panel">
-                            <div class="panel-heading">PROYECCIÓN</div>
-                            <table class="table table-bordered table-scroll table-hover">
-                                <thead>
-                                    <tr>
-                                        <th width="50px">CICLO</th>
-                                        <th>EXP. CURRICULAR</th>
-                                        <th width="40px">HORAS</th>
-                                        <th width="100px">ALUMNOS PROYECTADOS</th>
-                                        <th width="100px">AULA CAPACIDAD</th>
-                                        <th width="100px">SECCION ESTIMADAS</th>
-                                        <th width="100px">SECCION T. MAÑANA</th>
-                                        <th width="100px">SECCION T. TARDE</th>
-                                        <th width="100px">SECCION T. NOCHE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input info">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="panel">
-                            <div class="panel-heading">PROYECCIÓN</div>
-                            <table class="table table-bordered table-scroll table-hover">
-                                <thead>
-                                    <tr>
-                                        <th width="50px">CICLO</th>
-                                        <th>EXP. CURRICULAR</th>
-                                        <th width="40px">HORAS</th>
-                                        <th width="100px">ALUMNOS PROYECTADOS</th>
-                                        <th width="100px">AULA CAPACIDAD</th>
-                                        <th width="100px">SECCION ESTIMADAS</th>
-                                        <th width="100px">SECCION T. MAÑANA</th>
-                                        <th width="100px">SECCION T. TARDE</th>
-                                        <th width="100px">SECCION T. NOCHE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input info">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td class="text-center">1</td>
-                                        <td>CONTABILIDAD FINANCIERA</td>
-                                        <td class="text-center">5</td>
-                                        <td class="text-center">150</td>
-                                        <td><input type="text" value="40" class="form-control"></td>
-                                        <td class="text-center">3</td>
-                                        <td><input type="text" class="form-control" value="2"></td>
-                                        <td><input type="text" class="form-control" value="1"></td>
-                                        <td><input type="text" class="form-control" value="0"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="panel">
-                            <div class="panel-heading">SECCIÓN 1
-                               <span class="pull-right">
-                                   <select class="form-control">
-                                       <option>SECCIÓN 2</option>
-                                       <option>SECCIÓN 3</option>
-                                       <option>SECCIÓN 4</option>
-                                       <option>SECCIÓN 5</option>
-                                       <option>SECCIÓN 6</option>
-                                   </select> 
-                                </span>
-                            </div>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>GRUPO</th>
-                                        <th width="120px">TURNO</th>
-                                        <th width="120px">AMBIENTE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="col-input">
-                                        <td>Teoria</td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>MAÑANA</option>
-                                                <option>TURNO</option>
-                                                <option>NOCHE</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>AULA</option>
-                                                <option>LAB. COMPUTO</option>
-                                                <option>LAB. ESPECIALIDAD</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td>Teoria</td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>MAÑANA</option>
-                                                <option>TURNO</option>
-                                                <option>NOCHE</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>AULA</option>
-                                                <option>LAB. COMPUTO</option>
-                                                <option>LAB. ESPECIALIDAD</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr class="col-input">
-                                        <td>Teoria</td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>MAÑANA</option>
-                                                <option>TURNO</option>
-                                                <option>NOCHE</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option>AULA</option>
-                                                <option>LAB. COMPUTO</option>
-                                                <option>LAB. ESPECIALIDAD</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel-footer">
-                                <a href="#" class="btn btn-danger">GUARDAR</a>
+                            <div class="panel-heading">PROYECCIÓN
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-primary">+</a>
+                                    <a href="#" class="btn btn-default btn-xs">GENERAR PROYECCION</a>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr class="thead-mini">
+                                        <th width="50px">CICLO</th>
+                                        <th>EXP. CURRICULAR</th>
+                                        <th width="40px">HORAS</th>
+                                        <th width="60px">ALUMNOS PROYECTADOS</th>
+                                        <th width="60px">AULA CAPACIDAD</th>
+                                        <th width="60px">SECCION ESTIMADAS</th>
+                                        <th width="60px">SECCION T.MAÑANA</th>
+                                        <th width="60px">SECCION T.TARDE</th>
+                                        <th width="60px">SECCION T.NOCHE</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableData">
+                                    <tr class="col-input">
+                                        <td class="text-center">1</td>
+                                        <td>CONTABILIDAD FINANCIERA</td>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">150</td>
+                                        <td><input type="text" value="40" class="form-control"></td>
+                                        <td class="text-center">3</td>
+                                        <td><input type="text" class="form-control" value="2"></td>
+                                        <td><input type="text" class="form-control" value="1"></td>
+                                        <td><input type="text" class="form-control" value="0"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="frmGrupos">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-3">
+                                <div class="panel">
+                                    <div class="panel-heading">SECCIÓN 1
+                                       <span class="pull-right">
+                                           <select class="form-control">
+                                               <option>SECCIÓN 2</option>
+                                               <option>SECCIÓN 3</option>
+                                               <option>SECCIÓN 4</option>
+                                               <option>SECCIÓN 5</option>
+                                               <option>SECCIÓN 6</option>
+                                           </select> 
+                                        </span>
+                                    </div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>GRUPO</th>
+                                                <th width="120px">TURNO</th>
+                                                <th width="120px">AMBIENTE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="col-input">
+                                                <td>Teoria</td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>MAÑANA</option>
+                                                        <option>TURNO</option>
+                                                        <option>NOCHE</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>AULA</option>
+                                                        <option>LAB. COMPUTO</option>
+                                                        <option>LAB. ESPECIALIDAD</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr class="col-input">
+                                                <td>Teoria</td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>MAÑANA</option>
+                                                        <option>TURNO</option>
+                                                        <option>NOCHE</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>AULA</option>
+                                                        <option>LAB. COMPUTO</option>
+                                                        <option>LAB. ESPECIALIDAD</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr class="col-input">
+                                                <td>Teoria</td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>MAÑANA</option>
+                                                        <option>TURNO</option>
+                                                        <option>NOCHE</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option>AULA</option>
+                                                        <option>LAB. COMPUTO</option>
+                                                        <option>LAB. ESPECIALIDAD</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="panel-footer">
+                                        <a href="#" class="btn btn-danger">GUARDAR</a>
+                                        <div class="pull-right">
+                                            <a href="#" class="btn btn-primary">+</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1301,4 +612,6 @@
             </section>
         </main>
     </body>
+        <script src="proyeccion.js"></script>
+    
 </html>
