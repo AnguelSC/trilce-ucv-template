@@ -465,15 +465,6 @@ textarea{
 .indicator {
     margin-right:5px;
 }
-.tree li button, .tree li button:active, .tree li button:focus {
-    text-decoration: none;
-    color:#369;
-    border:none;
-    background:transparent;
-    margin:0px 0px 0px 0px;
-    padding:0px 0px 0px 0px;
-    outline: 0;
-}
 .tree li small{
     display: inline-block;
     z-index: 20;
