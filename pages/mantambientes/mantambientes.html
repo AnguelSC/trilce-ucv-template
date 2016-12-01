@@ -86,7 +86,7 @@
                         <div class="panel-heading">AMBIENTES</div>
                         <div class="panel-body  ambiente-block">
                         <ul class="tree">
-                          <li id="1"><span>UCV CAMPUS CHICLAYO <div class="btn-group">
+                          <li id="1"><span>📁 UCV CAMPUS CHICLAYO <div class="btn-group">
                             <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'FILIAL','LOCAL')" title="Agregar">
                               <i class="icon-plus"></i>
                             </button>
@@ -95,38 +95,38 @@
                             </button>
                           </div></span>
                               <ul>
-                                <li id="1"><span>CAMPUS CHICLAYO <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'LOCAL','PABELLON')" title="Agregar"><i class="icon-plus"></i></button>
+                                <li id="1"><span>📁 CAMPUS CHICLAYO <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'LOCAL','PABELLON')" title="Agregar"><i class="icon-plus"></i></button>
                                 <button class="btn btn-xs btn-primary" onclick="editarElemento(this,'LOCAL')" title="Editar">
                                   <i class="icon-pencil"></i>
                                 </button>
                                 </div></span>
                                   <ul>
-                                    <li id="1"><span>PABELLON A <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','AMBIENTE')" title="Agregar"><i class="icon-plus"></i></button>
+                                    <li id="1"><span>📁 PABELLON A <div class="btn-group"><button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','AMBIENTE')" title="Agregar"><i class="icon-plus"></i></button>
                                       <button class="btn btn-xs btn-primary" onclick="editarElemento(this,'PABELLON')" title="Editar">
                                         <i class="icon-pencil"></i>
                                       </button>
                                     </div></span>
                                         <ul>
-                                          <li id="1"><span>PISO 1<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span>
+                                          <li id="1"><span>📁 PISO 1<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span>
                                               <ul>
                                                 <li>AULA 1</li>
                                                 <li>LABORATORIO 2</li>
                                                 <li>Of ADMINISTRATIVA OTI</li>
                                               </ul>
                                           </li>
-                                          <li id="2"><span>PISO 2<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
-                                          <li id="3"><span>PISO 3<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                          <li id="2"><span>📁 PISO 2<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                          <li id="3"><span>📁 PISO 3<button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PISO','AMBIENTE')" title="Editar"><i class="icon-plus"></i></button></span></li>
                                         </ul>
                                     </li>
-                                    <li id="2"><span>PABELLON B <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
-                                    <li id="3"><span>PABELLON C <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                    <li id="2"><span>📁 PABELLON B <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
+                                    <li id="3"><span>📁 PABELLON C <button class="btn btn-xs btn-success" onclick="agregarElemento(this,'PABELLON','PISO')" title="Editar"><i class="icon-plus"></i></button></span></li>
                                   </ul>
                                 </li>
-                                <li id="2"><span>CENTRO DE IDIOMAS</span></li>
+                                <li id="2"><span>📁 CENTRO DE IDIOMAS</span></li>
                               </ul>
                           </li>
-                          <li id="2"><span>UCV CAMPUS TRUJILLO</span></li>
-                          <li id="3"><span>UCV CAMPUS LIMA NORTE</span></li>
+                          <li id="2"><span>📁 UCV CAMPUS TRUJILLO</span></li>
+                          <li id="3"><span>📁 UCV CAMPUS LIMA NORTE</span></li>
                         </ul>
                         </div>
                     </div>
@@ -210,6 +210,7 @@
     <script type="text/javascript">
     (function() {
      loadCombos();
+     renderTreeView();
     })();
     </script>
 </html>

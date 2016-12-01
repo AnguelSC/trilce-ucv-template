@@ -1,11 +1,40 @@
 var nivelActual = "";
 var stickBreadcrumbs = " > ";
 
+function renderTreeView(){
+  //Filiales
+  for (var i = 0; i < filiales.length; i++) {
+    console.log(filiales[i]);
+    //Locales
+    console.log("-----FILIALES-------");
+    for (var j = 0; j < locales.length; j++) {
+      if(locales[j][1] == filiales[i][0]){
+        console.log(locales[j]);
+        //Pabellones
+        console.log("-----LOCALES-------");
+        for (var k = 0; k < pabellones.length; k++) {
+          if(pabellones[k][1] == locales[j][0]){
+            console.log(pabellones[k]);
+            //Ambientes
+            console.log("-----PABELLONES-------");
+            for (var l = 0; l < ambientes.length; l++) {
+              if(ambientes[l][1] == pabellones[k][0]){
+                console.log(ambientes[l]);
+              }
+              console.log("-----AMBIENTES-------");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 function agregarElemento(boton,nivelActual,nivelSiguente){
   //panelHeading
   var spanClick = boton.parentElement.parentElement;
   //console.log(spanClick);
-  document.getElementById('breadcrumbActual').textContent = "AGREGAR NIVEL A: "+spanClick.textContent;
+  document.getElementById('breadcrumbActual').textContent = "AGREGAR NIVEL A: "+spanClick.textContent.substr(2);
   //Elementos Generales
   document.querySelector('#descripcion').style.display = 'block';
   document.querySelector('#EsVigente').style.display = 'block';
@@ -25,7 +54,7 @@ function agregarElemento(boton,nivelActual,nivelSiguente){
   }
 
   if(nivelActual == 'PISO'){
-    document.querySelector('#tipoPiso select').value = boton.parentElement.parentElement.parentElement.id;
+    document.querySelector('#tipoPiso select').value = spanClick.id;
     document.querySelector('#tipoPiso select').disabled = true;
   }else{
     document.querySelector('#tipoPiso select').selectedIndex = 0;
@@ -67,22 +96,21 @@ var tiposPiso = [
 ];
 
 var ambientes = [
-  [1,1,1,1,'CAMPUS UCV CHICLAYO',1,200,1.2,240,true],
-  [2,1,1,1,'CENTRO DE IDIOMAS',1,200,1.2,240,true],
-  [3,4,1,1,'CAMPUS UCV LIMA NORTE',1,200,1.2,240,true],
+  [1,1,1,1,'AULA 204',1,200,1.2,240,true],
+  [2,1,1,1,'AULA 236',1,200,1.2,240,true],
+  [3,2,1,1,'AULA 405',1,200,1.2,240,true],
 ];
 
 function editarElemento(boton,nivelActual){
   //panelHeading
   var spanClick = boton.parentElement.parentElement;
-  console.log(spanClick);
   var returnValue = buscarPorId(spanClick.parentElement.id,nivelActual);
-  document.getElementById('breadcrumbActual').textContent = "EDITAR NIVEL : "+spanClick.textContent;
+  document.getElementById('breadcrumbActual').textContent = "EDITAR NIVEL : "+spanClick.textContent.substr(2).trim();
   //Elementos Generales
 
 
   document.querySelector('#descripcion').style.display = 'block';
-  document.querySelector('#descripcion input').value = spanClick.textContent;
+  document.querySelector('#descripcion input').value = spanClick.textContent.substr(2).trim();
   document.querySelector('#EsVigente').style.display = 'block';
 
   if(nivelActual == 'FILIAL') document.querySelector('#EsVigente input').checked = returnValue[2];
