@@ -98,3 +98,12 @@
 .icon-plus:before {
   content: "\6c";
 }
+.icon-sign-out:before {
+  content: "\6d";
+}
+.icon-check:before {
+  content: "\6e";
+}
+.icon-check-circle:before {
+  content: "\74";
+}
