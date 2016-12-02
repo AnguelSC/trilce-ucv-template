@@ -296,7 +296,7 @@ function registro(){
    periodo = periodo.options[periodo.selectedIndex].text;
     
     var elements = document.querySelectorAll(".resultTable td");
-    
+        
     elements[0].innerHTML = filial;
     elements[1].innerHTML = plan;
     elements[2].innerHTML = escuela;
@@ -314,9 +314,7 @@ function registro(){
     tableData.innerHTML = '';
     for(var i = 0; i < expcurricular.length ; i++){
         //table.innerHTML
-        var fila = document.createElement("tr");
-        fila.classList.add('col-input');
-        fila.innerHTML = '<tr>'+
+        var fila = '<tr class="col-input" onclick="mostrarGrupos('+i+')">'+
                               '<td class="text-center">'+expcurricular[i].ciclo+'</td>'+
                               '<td>'+expcurricular[i].expcurricular+'</td>'+
                               '<td class="text-center">'+expcurricular[i].horas+'</td>'+
@@ -343,8 +341,25 @@ function registro(){
                                 '">'+
                               '</td>'+
                             '</tr>';
-        tableData.appendChild(fila);
+        tableData.innerHTML += fila;
     }
+}
+
+function mostrarGrupos(pos){
+    var frmGrupos = document.getElementById('frmGrupos');   
+    frmGrupos.classList.remove('hide');
+    var fila = expcurricular[pos];
+    var element = document.querySelector('#frmGrupos .tabs-v');
+    element.innerHTML = '';
+    for(var i = 0; i < fila.seccionEstimada; i++){
+        if(i == 0){
+            var text = ' class="active"';
+        }else{
+            text= '';
+        }
+        element.innerHTML+= '<li'+ text +'><a href="#">Sección'+ (i+1) +'</a></li>';   
+    }
+    
 }
 
 function sumaSecciones(ref, pos,option){

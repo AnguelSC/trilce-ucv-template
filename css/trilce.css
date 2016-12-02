@@ -552,3 +552,62 @@ table .checkbox-style label:before{
     position: absolute;
     z-index: 99;
 }
+
+.tabs-v{
+    position: absolute;
+    left: 70px;
+    right: -16px;
+    top: 5px;
+    border-radius: 4px 0 0 4px; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+.tabs-v > li{
+    padding: 1px;
+    padding-right: 0;
+}
+.tabs-v > li > a{
+    position: relative;
+    color:#fff;
+    display: block;
+    padding: 5px 10px;
+    font-size: 12px;
+    transition: all 0.5s;
+    text-align: right;
+    border-radius: 4px 0 0 4px;
+    background: #0771B1;
+    border-left:1px solid #ddd;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    
+}
+/*.tabs-v > li > a:hover:before {
+    border: solid;
+    border-color: #fff transparent;
+    border-color: transparent #fff;
+    border-width: .5em 0 .5em .5em;
+    content: "";
+    display: block;
+    right: -6px;
+    position: absolute;
+    z-index: 120;
+    transition: all 0.7s;
+}*/
+.tabs-v > li.active > a,
+.tabs-v > li > a:hover{
+    color:#0771B1;
+    background: #fff;
+    text-decoration: none;
+    padding-right: 15px;
+}
+.tabs-content{
+    background: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    border:1px solid #ddd;
+}
+.tabs-content .panel{
+    margin-bottom: 4px !important;
+}
