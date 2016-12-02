@@ -7,3 +7,16 @@
 small > button{
   color:#f5f5f5;
 }
+
+span .btn-group{
+  /*display: none;*/
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+span:hover .btn-group{
+  /*display: block;*/
+  visibility: visible;
+  opacity: 1;
+}

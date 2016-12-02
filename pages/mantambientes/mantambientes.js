@@ -1,33 +1,121 @@
 var nivelActual = "";
 var stickBreadcrumbs = " > ";
 
-function renderTreeView(){
-  //Filiales
-  for (var i = 0; i < filiales.length; i++) {
-    console.log(filiales[i]);
-    //Locales
-    console.log("-----FILIALES-------");
-    for (var j = 0; j < locales.length; j++) {
-      if(locales[j][1] == filiales[i][0]){
-        console.log(locales[j]);
-        //Pabellones
-        console.log("-----LOCALES-------");
-        for (var k = 0; k < pabellones.length; k++) {
-          if(pabellones[k][1] == locales[j][0]){
-            console.log(pabellones[k]);
-            //Ambientes
-            console.log("-----PABELLONES-------");
-            for (var l = 0; l < ambientes.length; l++) {
-              if(ambientes[l][1] == pabellones[k][0]){
-                console.log(ambientes[l]);
-              }
-              console.log("-----AMBIENTES-------");
+//Arbol
+var spanS = document.querySelectorAll(".tree span");
+for (var i = 0; i < spanS.length; i++) {
+  if(spanS[i].nextSibling){
+      if(spanS[i].nextSibling.nextSibling){
+        spanS[i].nextSibling.nextSibling.style.display = 'none';
+      }
+  }
+  spanS[i].addEventListener('click',function (evt) {
+      if((evt.target.tagName == 'SMALL') || (evt.target.tagName == 'SPAN')){
+      //Solo para SMALL Sino Retorna el nextSibling de Span
+      var Elemento = ((evt.target.tagName == 'SMALL')?evt.target.parentElement.nextSibling:evt.target.nextSibling);
+
+      if(Elemento){
+        if(Elemento.nextSibling){
+            console.log(evt.target.childNodes);
+            //Boton al Final
+            var index = 0;
+            var sinIcono = evt.target.childNodes[index].nodeValue.trim().substr(2);
+            //Boton al Comienzo
+            /*if(evt.target.childNodes[2] != undefined){
+              var sinIcono = evt.target.childNodes[2].nodeValue.substr(2);
+              var index = 2;
+            }else{
+              var sinIcono = evt.target.childNodes[1].nodeValue.substr(2);
+              var index = 1;
+            }*/
+            //var sinIcono = ((evt.target.childNodes[2] != undefined)?evt.target.childNodes[2].nodeValue.substr(2):evt.target.childNodes[1].nodeValue.substr(2));
+            if(Elemento.nextSibling.style.display == 'none'){
+                Elemento.nextSibling.style.display = 'block';
+                evt.target.childNodes[index].nodeValue  = "📂 "+sinIcono;
+            }else{
+                Elemento.nextSibling.style.display = 'none';
+                evt.target.childNodes[index].nodeValue  = "📁 "+sinIcono;
             }
-          }
         }
       }
     }
+  });
+}
+
+
+var dataAmbientes = [
+	[4,9,8,1,123,1,"Aula 101",1,"PISO 1",1,"PABELLON A",1,"CAMPUS LIMA NORTE",1,"UCV LIMA NORTE",1,200.00,240,1.20],
+	[4,9,8,1,124,1,"Aula 102",1,"PISO 1",1,"PABELLON A",1,"CAMPUS LIMA NORTE",1,"UCV LIMA NORTE",1,200.00,240,1.20],
+	[3,4,6,1,125,1,"Aula 103",1,"PISO 1",1,"PABELLON A",1,"CAMPUS UCV CHICLAYO",1,"UCV CAMPUS CHICLAYO",1,200.00,240,1.20],
+  [3,4,6,2,130,1,"Aula 205",1,"PISO 2",1,"PABELLON A",1,"CAMPUS UCV CHICLAYO",1,"UCV CAMPUS CHICLAYO",1,200.00,240,1.20],
+  [3,4,6,2,137,1,"Aula 206",1,"PISO 2",1,"PABELLON A",1,"CAMPUS UCV CHICLAYO",1,"UCV CAMPUS CHICLAYO",1,200.00,240,1.20],
+	[3,4,7,2,126,1,"Aula 201",1,"PISO 2",2,"PABELLON B",1,"CAMPUS UCV CHICLAYO",1,"UCV CAMPUS CHICLAYO",1,200.00,240,1.20],
+	[4,9,9,2,127,1,"Aula 202",1,"PISO 2",2,"PABELLON B",1,"CAMPUS LIMA NORTE",1,"UCV LIMA NORTE",1,200.00,240,1.20],
+	[4,9,9,2,128,1,"Aula 203",1,"PISO 2",2,"PABELLON B",1,"CAMPUS LIMA NORTE",1,"UCV LIMA NORTE",1,200.00,240,1.20]
+];
+
+function renderTreeView(){
+  //Filiales
+  var arbol = document.querySelector('.tree');
+  for (var i = 0; i < filiales.length; i++) {
+    console.log(filiales[i]);
+    recursiveTreeView(0,filiales[i][0]);
   }
+}
+
+function recursiveTreeView(nivel,padre,extraAmbiente){
+  var datosHijos = filterTable(nivel,padre,extraAmbiente);
+  for (var i = 0; i < datosHijos.length; i++) {
+
+    switch (nivel) {
+      case 0:
+        //Locales
+        console.log("--",datosHijos[i][12]);
+
+        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0);
+        break;
+      case 1:
+        //Pabellones
+        console.log("----",datosHijos[i][10]);
+        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0);
+        break;
+      case 2:
+        //Pisos
+        console.log("------",datosHijos[i][8]);
+        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],padre);
+        break;
+      case 3:
+        //Ambientes
+        console.log("--------",datosHijos[i][6]);
+        break;
+      default:
+    }
+  }
+}
+
+function filterTable(index,value,extraAmbiente){
+  var returnTable = [];
+  for (var i = 0; i < dataAmbientes.length; i++) {
+    if(index == 3){
+      if(dataAmbientes[i][index] == value && dataAmbientes[i][index-1] == extraAmbiente){
+        if(buscarEnTabla(returnTable,dataAmbientes[i][index+1],index) == null) returnTable.push(dataAmbientes[i]);
+      };
+    }else{
+      if(dataAmbientes[i][index] == value){
+        if(buscarEnTabla(returnTable,dataAmbientes[i][index+1],index) == null) returnTable.push(dataAmbientes[i]);
+      };
+    }
+  }
+  return  returnTable;
+}
+
+function buscarEnTabla(array,valor,pos){
+  for (var i = 0; i < array.length; i++) {
+    if(array[i][pos+1] == valor){
+      return array[i];
+    }
+  }
+  return null;
 }
 
 function agregarElemento(boton,nivelActual,nivelSiguente){
@@ -54,7 +142,7 @@ function agregarElemento(boton,nivelActual,nivelSiguente){
   }
 
   if(nivelActual == 'PISO'){
-    document.querySelector('#tipoPiso select').value = spanClick.id;
+    document.querySelector('#tipoPiso select').value = spanClick.parentElement.id;
     document.querySelector('#tipoPiso select').disabled = true;
   }else{
     document.querySelector('#tipoPiso select').selectedIndex = 0;
@@ -63,23 +151,22 @@ function agregarElemento(boton,nivelActual,nivelSiguente){
 }
 
 var filiales = [
-  [1,'UCV CAMPUS CHICLAYO',1],
-  [2,'UCV CAMPUS TRUJILLO',1],
-  [3,'UCV CAMPUS LIMA NORTE',1]
+  [3,'UCV CAMPUS CHICLAYO',1],
+  [4,'UCV CAMPUS LIMA NORTE',1],
 ];
 
-var locales = [
-  [1,1,'CAMPUS UCV CHICLAYO',1],
-  [2,3,'CAMPUS UCV LIMA NORTE',1],
-  [3,1,'CENTRO DE IDIOMAS',1],
-];
-
-var pabellones = [
-  [1,1,'PABELLON A',0],
-  [2,1,'PABELLON B',1],
-  [3,1,'PABELLON C',1],
-  [4,2,'PABELLON A',1],
-];
+// var locales = [
+//   [1,1,'CAMPUS UCV CHICLAYO',1],
+//   [2,3,'CAMPUS UCV LIMA NORTE',1],
+//   [3,1,'CENTRO DE IDIOMAS',1],
+// ];
+//
+// var pabellones = [
+//   [1,1,'PABELLON A',0],
+//   [2,1,'PABELLON B',1],
+//   [3,1,'PABELLON C',1],
+//   [4,2,'PABELLON A',1],
+// ];
 
 var tiposAmbiente = [
   [1,'Aula',1.20,1],
@@ -95,30 +182,30 @@ var tiposPiso = [
   [4,'PISO 4',1]
 ];
 
-var ambientes = [
-  [1,1,1,1,'AULA 204',1,200,1.2,240,true],
-  [2,1,1,1,'AULA 236',1,200,1.2,240,true],
-  [3,2,1,1,'AULA 405',1,200,1.2,240,true],
-];
+// var ambientes = [
+//   [1,1,1,1,'AULA 204',1,200,1.2,240,true],
+//   [2,1,1,1,'AULA 236',1,200,1.2,240,true],
+//   [3,2,1,1,'AULA 405',1,200,1.2,240,true],
+// ];
 
 function editarElemento(boton,nivelActual){
   //panelHeading
   var spanClick = boton.parentElement.parentElement;
   var returnValue = buscarPorId(spanClick.parentElement.id,nivelActual);
-  document.getElementById('breadcrumbActual').textContent = "EDITAR NIVEL : "+spanClick.textContent.substr(2).trim();
-  //Elementos Generales
+  document.getElementById('breadcrumbActual').textContent = "EDITAR NIVEL : "+spanClick.textContent.trim().substr(2).trim();
 
-
+  //Descripcion y Es Vigente
   document.querySelector('#descripcion').style.display = 'block';
-  document.querySelector('#descripcion input').value = spanClick.textContent.substr(2).trim();
+
   document.querySelector('#EsVigente').style.display = 'block';
 
-  if(nivelActual == 'FILIAL') document.querySelector('#EsVigente input').checked = returnValue[2];
-  if(nivelActual == 'LOCAL') document.querySelector('#EsVigente input').checked = returnValue[3];
-  if(nivelActual == 'PABELLON') document.querySelector('#EsVigente input').checked = returnValue[3];
+  //Valor de Descripcion y Es Vigente
+  document.querySelector('#descripcion input').value = spanClick.textContent.trim().substr(2).trim();
+  if(nivelActual == 'FILIAL') document.querySelector('#EsVigente input').checked = returnValue[16];
+  if(nivelActual == 'LOCAL') document.querySelector('#EsVigente input').checked = returnValue[14];
+  if(nivelActual == 'PABELLON') document.querySelector('#EsVigente input').checked = returnValue[12];
   //if(nivelActual == 'PISO') document.querySelector('#EsVigente input').checked = true;
-  if(nivelActual == 'AMBIENTE') document.querySelector('#EsVigente input').checked = returnValue[9];
-
+  if(nivelActual == 'AMBIENTE') document.querySelector('#EsVigente input').checked = returnValue[14];
 
   if(nivelActual == 'AMBIENTE'){
     document.querySelector('#tipoAmbiente').style.display = 'block';
@@ -131,17 +218,33 @@ function editarElemento(boton,nivelActual){
   }
 }
 
-function buscarPorId(id,array){
-  if(array == 'FILIAL') array = 'filiales';
-  if(array == 'LOCAL') array = 'locales';
-  if(array == 'PABELLON') array = 'pabellones';
-  //if(array == 'PISO') array = 'pisos';
-  if(array == 'AMBIENTE') array = 'ambientes';
+//Arreglos Separados
+// function buscarPorId(id,array){
+//   if(array == 'FILIAL') array = 'filiales';
+//   if(array == 'LOCAL') array = 'locales';
+//   if(array == 'PABELLON') array = 'pabellones';
+//   //if(array == 'PISO') array = 'pisos';
+//   if(array == 'AMBIENTE') array = 'ambientes';
+//
+//   var analizeArray = window[array];
+//   for (var i = 0; i < analizeArray.length; i++) {
+//     if(analizeArray[i][0]+"" == id){
+//         return window[array][i];
+//     }
+//   }
+// }
 
-  var analizeArray = window[array];
+//Arreglos de Inner Join
+function buscarPorId(id,nivel){
+  if(nivel == 'FILIAL') nivel = 0;
+  if(nivel == 'LOCAL') nivel = 1;
+  if(nivel == 'PABELLON') nivel = 2;
+  //if(nivel == 'PISO') nivel = 'pisos';
+  if(nivel == 'AMBIENTE') nivel = 4;
+
   for (var i = 0; i < analizeArray.length; i++) {
-    if(analizeArray[i][0]+"" == id){
-        return window[array][i];
+    if(dataAmbientes[i][nivel] == id){
+        return dataAmbientes[i];
     }
   }
 }
@@ -173,12 +276,4 @@ function guardar(){
   console.log(document.querySelector('#categoriaAmbiente select'));
   console.log(document.querySelector('#tipoPiso select'));
   console.log(document.querySelector('#EsVigente input'));
-}
-
-function nuevo(){
-  document.querySelector('#descripcion input').style.display = 'none';
-  document.querySelector('#tipoAmbiente select').style.display = 'none';
-  document.querySelector('#categoriaAmbiente select').style.display = 'none';
-  document.querySelector('#tipoPiso select').style.display = 'none';
-  document.querySelector('#EsVigente input').style.display = 'none';
 }
