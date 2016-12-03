@@ -3,3 +3,8 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
+.icon-col i:before{
+    color:darkcyan;
+    font-size: 21px;
+    padding-top: 8px;
+}
