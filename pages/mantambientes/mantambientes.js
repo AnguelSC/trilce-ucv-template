@@ -2,21 +2,17 @@ var nivelActual = "";
 var stickBreadcrumbs = " > ";
 
 //Arbol
-var spanS = document.querySelectorAll(".tree span");
-for (var i = 0; i < spanS.length; i++) {
-  if(spanS[i].nextSibling){
-      if(spanS[i].nextSibling.nextSibling){
-        spanS[i].nextSibling.nextSibling.style.display = 'none';
-      }
-  }
-  spanS[i].addEventListener('click',function (evt) {
-      if((evt.target.tagName == 'SMALL') || (evt.target.tagName == 'SPAN')){
-      //Solo para SMALL Sino Retorna el nextSibling de Span
-      var Elemento = ((evt.target.tagName == 'SMALL')?evt.target.parentElement.nextSibling:evt.target.nextSibling);
-
-      if(Elemento){
-        if(Elemento.nextSibling){
-            console.log(evt.target.childNodes);
+function reloadTree(){
+  var spanS = document.querySelectorAll(".tree span");
+  for (var i = 0; i < spanS.length; i++) {
+    if(spanS[i].nextSibling){
+        spanS[i].nextSibling.style.display = 'none';
+    }
+    spanS[i].addEventListener('click',function (evt) {
+        if((evt.target.tagName == 'SMALL') || (evt.target.tagName == 'SPAN')){
+        //Solo para SMALL Sino Retorna el nextSibling de Span
+        var Elemento = ((evt.target.tagName == 'SMALL')?evt.target.parentElement.nextSibling:evt.target.nextSibling);
+        if(Elemento){
             //Boton al Final
             var index = 0;
             var sinIcono = evt.target.childNodes[index].nodeValue.trim().substr(2);
@@ -29,18 +25,19 @@ for (var i = 0; i < spanS.length; i++) {
               var index = 1;
             }*/
             //var sinIcono = ((evt.target.childNodes[2] != undefined)?evt.target.childNodes[2].nodeValue.substr(2):evt.target.childNodes[1].nodeValue.substr(2));
-            if(Elemento.nextSibling.style.display == 'none'){
-                Elemento.nextSibling.style.display = 'block';
+            if(Elemento.style.display == 'none'){
+                Elemento.style.display = 'block';
                 evt.target.childNodes[index].nodeValue  = "📂 "+sinIcono;
             }else{
-                Elemento.nextSibling.style.display = 'none';
+                Elemento.style.display = 'none';
                 evt.target.childNodes[index].nodeValue  = "📁 "+sinIcono;
             }
         }
       }
-    }
-  });
+    });
+  }
 }
+
 
 
 var dataAmbientes = [
@@ -54,44 +51,237 @@ var dataAmbientes = [
 	[4,9,9,2,128,1,"Aula 203",1,"PISO 2",2,"PABELLON B",1,"CAMPUS LIMA NORTE",1,"UCV LIMA NORTE",1,200.00,240,1.20]
 ];
 
+var arbol = document.querySelector('.tree');
 function renderTreeView(){
   //Filiales
-  var arbol = document.querySelector('.tree');
   for (var i = 0; i < filiales.length; i++) {
-    console.log(filiales[i]);
-    recursiveTreeView(0,filiales[i][0]);
+    //console.log(filiales[i]);
+    var elementoLista = document.createElement('LI');
+    elementoLista.setAttribute('id',filiales[i][0]);
+
+    var elementoSpan = document.createElement('SPAN');
+    elementoSpan.textContent = '📁 '+filiales[i][1];
+
+    var grupoBotones = document.createElement('DIV');
+    grupoBotones.setAttribute('class','btn-group');
+
+    var botonAgregar = document.createElement('BUTTON');
+    botonAgregar.className = 'btn btn-xs btn-default';
+    botonAgregar.onclick = agregarElemento(this,'FILIAL','LOCAL');
+    var iconoAgregar = document.createElement('I');
+    iconoAgregar.setAttribute('class','icon-plus');
+    botonAgregar.appendChild(iconoAgregar);
+
+    var botonEditar = document.createElement('BUTTON');
+    botonEditar.className = 'btn btn-xs btn-default';
+    var iconoEditar = document.createElement('I');
+    iconoEditar.setAttribute('class','icon-pencil');
+    botonEditar.appendChild(iconoEditar);
+
+    grupoBotones.appendChild(botonAgregar);
+    grupoBotones.appendChild(botonEditar);
+    elementoSpan.appendChild(grupoBotones);
+    elementoLista.appendChild(elementoSpan);
+
+
+    // cadenaArbol += '<li id="'+filiales[i][0]+'">'+
+    // '<span>📁 '+filiales[i][1]
+    // '<div class="btn-group">'+
+    // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'FILIAL\',\'LOCAL\')" title="Agregar">'+
+    // '<i class="icon-plus"></i>'+
+    // '</button>'+
+    // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'FILIAL\')" title="Editar">'+
+    // '<i class="icon-pencil"></i>'+
+    // '</button>'+
+    // '</div>'+
+    // '</span>'+recursiveTreeView(0,filiales[i][0])+'</li>';
+    elementoLista.appendChild(recursiveTreeView(0,filiales[i][0]));
+    arbol.appendChild(elementoLista);
   }
+  reloadTree();
+  //arbol.innerHTML = cadenaArbol;
+
 }
 
 function recursiveTreeView(nivel,padre,extraAmbiente){
   var datosHijos = filterTable(nivel,padre,extraAmbiente);
+  var listadoUl = document.createElement('UL');
   for (var i = 0; i < datosHijos.length; i++) {
-
     switch (nivel) {
       case 0:
         //Locales
         console.log("--",datosHijos[i][12]);
+        var elementoLista = document.createElement('LI');
+        elementoLista.setAttribute('id',datosHijos[i][1]);
 
-        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0);
+        var elementoSpan = document.createElement('SPAN');
+        elementoSpan.textContent = '📁 '+datosHijos[i][12];
+
+        var grupoBotones = document.createElement('DIV');
+        grupoBotones.setAttribute('class','btn-group');
+
+        var botonAgregar = document.createElement('BUTTON');
+        botonAgregar.className = 'btn btn-xs btn-default';
+        var iconoAgregar = document.createElement('I');
+        iconoAgregar.setAttribute('class','icon-plus');
+        botonAgregar.appendChild(iconoAgregar);
+
+        var botonEditar = document.createElement('BUTTON');
+        botonEditar.className = 'btn btn-xs btn-default';
+        var iconoEditar = document.createElement('I');
+        iconoEditar.setAttribute('class','icon-pencil');
+        botonEditar.appendChild(iconoEditar);
+
+        grupoBotones.appendChild(botonAgregar);
+        grupoBotones.appendChild(botonEditar);
+        elementoSpan.appendChild(grupoBotones);
+        elementoLista.appendChild(elementoSpan);
+
+        // cadenaRecursiva += '<li id="'+datosHijos[i][1]+'">'+
+        // '<span> 📁 '+datosHijos[i][12]+
+        // '<div class="btn-group">'+
+        // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'LOCAL\',\'PABELLON\')" title="Agregar">'+
+        // '<i class="icon-plus"></i>'+
+        // '</button>'+
+        // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'LOCAL\')" title="Editar">'+
+        // '<i class="icon-pencil"></i>'+
+        // '</button>'+
+        // '</div>'+
+        // '</span>';
+        elementoLista.appendChild(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0));
+        listadoUl.appendChild(elementoLista);
+        //cadenaRecursiva += recursiveTreeViewFinal(nivel+1,datosHijos[i][nivel+1],0);
+        //console.log(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0));
         break;
       case 1:
         //Pabellones
         console.log("----",datosHijos[i][10]);
-        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0);
+        var elementoLista = document.createElement('LI');
+        elementoLista.setAttribute('id',datosHijos[i][1]);
+
+        var elementoSpan = document.createElement('SPAN');
+        elementoSpan.textContent = '📁 '+datosHijos[i][10];
+
+        var grupoBotones = document.createElement('DIV');
+        grupoBotones.setAttribute('class','btn-group');
+
+        var botonAgregar = document.createElement('BUTTON');
+        botonAgregar.className = 'btn btn-xs btn-default';
+        var iconoAgregar = document.createElement('I');
+        iconoAgregar.setAttribute('class','icon-plus');
+        botonAgregar.appendChild(iconoAgregar);
+
+        var botonEditar = document.createElement('BUTTON');
+        botonEditar.className = 'btn btn-xs btn-default';
+        var iconoEditar = document.createElement('I');
+        iconoEditar.setAttribute('class','icon-pencil');
+        botonEditar.appendChild(iconoEditar);
+
+        grupoBotones.appendChild(botonAgregar);
+        grupoBotones.appendChild(botonEditar);
+        elementoSpan.appendChild(grupoBotones);
+        elementoLista.appendChild(elementoSpan);
+        elementoLista.appendChild(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0));
+        listadoUl.appendChild(elementoLista);
+
+        // cadenaArbol += '<li id="'+datosHijos[i][2]+'">'+
+        // '<span> 📁 '+datosHijos[i][10]+
+        // '<div class="btn-group">'+
+        // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'PABELLON\',\'AMBIENTE\')" title="Agregar">'+
+        // '<i class="icon-plus"></i>'+
+        // '</button>'+
+        // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'PABELLON\')" title="Editar">'+
+        // '<i class="icon-pencil"></i>'+
+        // '</button>'+
+        // '</div>'+
+        // '</span>';
+        // cadenaRecursiva += recursiveTreeViewFinal(nivel+1,datosHijos[i][nivel+1],0);
         break;
       case 2:
         //Pisos
         console.log("------",datosHijos[i][8]);
-        recursiveTreeView(nivel+1,datosHijos[i][nivel+1],padre);
+        // cadenaArbol += '<li id="'+datosHijos[i][3]+'">'+
+        // '<span> 📁 '+datosHijos[i][8]+
+        // '<div class="btn-group">'+
+        // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'PISO\',\'AMBIENTE\')" title="Agregar">'+
+        // '<i class="icon-plus"></i>'+
+        // '</button>'+
+        // '</div>'+
+        // '</span>';
+        // cadenaRecursiva += recursiveTreeViewFinal(nivel+1,datosHijos[i][nivel+1],padre);
+        var elementoLista = document.createElement('LI');
+        elementoLista.setAttribute('id',datosHijos[i][1]);
+
+        var elementoSpan = document.createElement('SPAN');
+        elementoSpan.textContent = '📁 '+datosHijos[i][8];
+
+        var grupoBotones = document.createElement('DIV');
+        grupoBotones.setAttribute('class','btn-group');
+
+        var botonAgregar = document.createElement('BUTTON');
+        botonAgregar.className = 'btn btn-xs btn-default';
+        var iconoAgregar = document.createElement('I');
+        iconoAgregar.setAttribute('class','icon-plus');
+        botonAgregar.appendChild(iconoAgregar);
+
+        var botonEditar = document.createElement('BUTTON');
+        botonEditar.className = 'btn btn-xs btn-default';
+        var iconoEditar = document.createElement('I');
+        iconoEditar.setAttribute('class','icon-pencil');
+        botonEditar.appendChild(iconoEditar);
+
+        grupoBotones.appendChild(botonAgregar);
+        grupoBotones.appendChild(botonEditar);
+        elementoSpan.appendChild(grupoBotones);
+        elementoLista.appendChild(elementoSpan);
+        elementoLista.appendChild(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],padre));
+        listadoUl.appendChild(elementoLista);
         break;
       case 3:
         //Ambientes
         console.log("--------",datosHijos[i][6]);
+        // cadenaArbol += '<li id="'+datosHijos[i][4]+'">'+
+        // '<span> 📁 '+datosHijos[i][6]+
+        // '<div class="btn-group">'+
+        // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'AMBIENTE\')" title="Editar">'+
+        // '<i class="icon-pencil"></i>'+
+        // '</button>'+
+        // '</div>'+
+        // '</span>';
+        var elementoLista = document.createElement('LI');
+        elementoLista.setAttribute('id',datosHijos[i][1]);
+
+        var elementoSpan = document.createElement('SPAN');
+        elementoSpan.textContent = '📁 '+datosHijos[i][6];
+
+        var grupoBotones = document.createElement('DIV');
+        grupoBotones.setAttribute('class','btn-group');
+
+        var botonAgregar = document.createElement('BUTTON');
+        botonAgregar.className = 'btn btn-xs btn-default';
+        var iconoAgregar = document.createElement('I');
+        iconoAgregar.setAttribute('class','icon-plus');
+        botonAgregar.appendChild(iconoAgregar);
+
+        var botonEditar = document.createElement('BUTTON');
+        botonEditar.className = 'btn btn-xs btn-default';
+        var iconoEditar = document.createElement('I');
+        iconoEditar.setAttribute('class','icon-pencil');
+        botonEditar.appendChild(iconoEditar);
+
+        grupoBotones.appendChild(botonAgregar);
+        grupoBotones.appendChild(botonEditar);
+        elementoSpan.appendChild(grupoBotones);
+        elementoLista.appendChild(elementoSpan);
+        //elementoLista.appendChild(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0));
+        listadoUl.appendChild(elementoLista);
         break;
       default:
     }
   }
+  return listadoUl;
 }
+
 
 function filterTable(index,value,extraAmbiente){
   var returnTable = [];
@@ -242,7 +432,7 @@ function buscarPorId(id,nivel){
   //if(nivel == 'PISO') nivel = 'pisos';
   if(nivel == 'AMBIENTE') nivel = 4;
 
-  for (var i = 0; i < analizeArray.length; i++) {
+  for (var i = 0; i < dataAmbientes.length; i++) {
     if(dataAmbientes[i][nivel] == id){
         return dataAmbientes[i];
     }
