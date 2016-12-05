@@ -67,7 +67,12 @@ function renderTreeView(){
 
     var botonAgregar = document.createElement('BUTTON');
     botonAgregar.className = 'btn btn-xs btn-default';
-    botonAgregar.onclick = agregarElemento(this,'FILIAL','LOCAL');
+    botonAgregar.addEventListener('click',function(evt){
+      console.log(evt);
+      var identificador = evt.target.parentElement.parentElement.parentElement.id;
+      var nombre = evt.target.parentElement.parentElement.textContent.substr(2).trim();
+      agregarElemento([identificador,nombre],'FILIAL','LOCAL')
+    });
     var iconoAgregar = document.createElement('I');
     iconoAgregar.setAttribute('class','icon-plus');
     botonAgregar.appendChild(iconoAgregar);
@@ -83,18 +88,6 @@ function renderTreeView(){
     elementoSpan.appendChild(grupoBotones);
     elementoLista.appendChild(elementoSpan);
 
-
-    // cadenaArbol += '<li id="'+filiales[i][0]+'">'+
-    // '<span>📁 '+filiales[i][1]
-    // '<div class="btn-group">'+
-    // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'FILIAL\',\'LOCAL\')" title="Agregar">'+
-    // '<i class="icon-plus"></i>'+
-    // '</button>'+
-    // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'FILIAL\')" title="Editar">'+
-    // '<i class="icon-pencil"></i>'+
-    // '</button>'+
-    // '</div>'+
-    // '</span>'+recursiveTreeView(0,filiales[i][0])+'</li>';
     elementoLista.appendChild(recursiveTreeView(0,filiales[i][0]));
     arbol.appendChild(elementoLista);
   }
@@ -122,6 +115,12 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
 
         var botonAgregar = document.createElement('BUTTON');
         botonAgregar.className = 'btn btn-xs btn-default';
+        botonAgregar.addEventListener('click',function(evt){
+          console.log(evt.target);
+          var identificador = evt.target.parentElement.parentElement.parentElement.id;
+          var nombre = evt.target.parentElement.parentElement.textContent.substr(2).trim();
+          agregarElemento([identificador,nombre],'LOCAL','PABELLON');
+        });
         var iconoAgregar = document.createElement('I');
         iconoAgregar.setAttribute('class','icon-plus');
         botonAgregar.appendChild(iconoAgregar);
@@ -157,7 +156,7 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
         //Pabellones
         console.log("----",datosHijos[i][10]);
         var elementoLista = document.createElement('LI');
-        elementoLista.setAttribute('id',datosHijos[i][1]);
+        elementoLista.setAttribute('id',datosHijos[i][2]);
 
         var elementoSpan = document.createElement('SPAN');
         elementoSpan.textContent = '📁 '+datosHijos[i][10];
@@ -167,6 +166,11 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
 
         var botonAgregar = document.createElement('BUTTON');
         botonAgregar.className = 'btn btn-xs btn-default';
+        botonAgregar.onclick = addEventListener('click',function(evt){
+          var identificador = evt.target.parentElement.parentElement.parentElement.id;
+          var nombre = evt.target.parentElement.parentElement.textContent.substr(2).trim();
+          agregarElemento([identificador,nombre],'PABELLON','AMBIENTE')
+        });
         var iconoAgregar = document.createElement('I');
         iconoAgregar.setAttribute('class','icon-plus');
         botonAgregar.appendChild(iconoAgregar);
@@ -183,34 +187,12 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
         elementoLista.appendChild(elementoSpan);
         elementoLista.appendChild(recursiveTreeView(nivel+1,datosHijos[i][nivel+1],0));
         listadoUl.appendChild(elementoLista);
-
-        // cadenaArbol += '<li id="'+datosHijos[i][2]+'">'+
-        // '<span> 📁 '+datosHijos[i][10]+
-        // '<div class="btn-group">'+
-        // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'PABELLON\',\'AMBIENTE\')" title="Agregar">'+
-        // '<i class="icon-plus"></i>'+
-        // '</button>'+
-        // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'PABELLON\')" title="Editar">'+
-        // '<i class="icon-pencil"></i>'+
-        // '</button>'+
-        // '</div>'+
-        // '</span>';
-        // cadenaRecursiva += recursiveTreeViewFinal(nivel+1,datosHijos[i][nivel+1],0);
         break;
       case 2:
         //Pisos
         console.log("------",datosHijos[i][8]);
-        // cadenaArbol += '<li id="'+datosHijos[i][3]+'">'+
-        // '<span> 📁 '+datosHijos[i][8]+
-        // '<div class="btn-group">'+
-        // '<button class="btn btn-xs btn-default" onclick="agregarElemento(this,\'PISO\',\'AMBIENTE\')" title="Agregar">'+
-        // '<i class="icon-plus"></i>'+
-        // '</button>'+
-        // '</div>'+
-        // '</span>';
-        // cadenaRecursiva += recursiveTreeViewFinal(nivel+1,datosHijos[i][nivel+1],padre);
         var elementoLista = document.createElement('LI');
-        elementoLista.setAttribute('id',datosHijos[i][1]);
+        elementoLista.setAttribute('id',datosHijos[i][3]);
 
         var elementoSpan = document.createElement('SPAN');
         elementoSpan.textContent = '📁 '+datosHijos[i][8];
@@ -220,6 +202,11 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
 
         var botonAgregar = document.createElement('BUTTON');
         botonAgregar.className = 'btn btn-xs btn-default';
+        botonAgregar.onclick = addEventListener('click',function(evt){
+          var identificador = evt.target.parentElement.parentElement.parentElement.id;
+          var nombre = evt.target.parentElement.parentElement.textContent.substr(2).trim();
+          agregarElemento([identificador,nombre],'PISO','AMBIENTE')
+        });
         var iconoAgregar = document.createElement('I');
         iconoAgregar.setAttribute('class','icon-plus');
         botonAgregar.appendChild(iconoAgregar);
@@ -240,16 +227,8 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
       case 3:
         //Ambientes
         console.log("--------",datosHijos[i][6]);
-        // cadenaArbol += '<li id="'+datosHijos[i][4]+'">'+
-        // '<span> 📁 '+datosHijos[i][6]+
-        // '<div class="btn-group">'+
-        // '<button class="btn btn-xs btn-default" onclick="editarElemento(this,\'AMBIENTE\')" title="Editar">'+
-        // '<i class="icon-pencil"></i>'+
-        // '</button>'+
-        // '</div>'+
-        // '</span>';
         var elementoLista = document.createElement('LI');
-        elementoLista.setAttribute('id',datosHijos[i][1]);
+        elementoLista.setAttribute('id',datosHijos[i][4]);
 
         var elementoSpan = document.createElement('SPAN');
         elementoSpan.textContent = '📁 '+datosHijos[i][6];
@@ -257,19 +236,12 @@ function recursiveTreeView(nivel,padre,extraAmbiente){
         var grupoBotones = document.createElement('DIV');
         grupoBotones.setAttribute('class','btn-group');
 
-        var botonAgregar = document.createElement('BUTTON');
-        botonAgregar.className = 'btn btn-xs btn-default';
-        var iconoAgregar = document.createElement('I');
-        iconoAgregar.setAttribute('class','icon-plus');
-        botonAgregar.appendChild(iconoAgregar);
-
         var botonEditar = document.createElement('BUTTON');
         botonEditar.className = 'btn btn-xs btn-default';
         var iconoEditar = document.createElement('I');
         iconoEditar.setAttribute('class','icon-pencil');
         botonEditar.appendChild(iconoEditar);
 
-        grupoBotones.appendChild(botonAgregar);
         grupoBotones.appendChild(botonEditar);
         elementoSpan.appendChild(grupoBotones);
         elementoLista.appendChild(elementoSpan);
@@ -308,11 +280,12 @@ function buscarEnTabla(array,valor,pos){
   return null;
 }
 
-function agregarElemento(boton,nivelActual,nivelSiguente){
+function agregarElemento(data,nivelActual,nivelSiguente){
   //panelHeading
-  var spanClick = boton.parentElement.parentElement;
+  //var spanClick = boton.parentElement.parentElement;
   //console.log(spanClick);
-  document.getElementById('breadcrumbActual').textContent = "AGREGAR NIVEL A: "+spanClick.textContent.substr(2);
+  console.log(data)
+  document.getElementById('breadcrumbActual').textContent = "AGREGAR NIVEL A: "+data[1];
   //Elementos Generales
   document.querySelector('#descripcion').style.display = 'block';
   document.querySelector('#EsVigente').style.display = 'block';
@@ -332,7 +305,7 @@ function agregarElemento(boton,nivelActual,nivelSiguente){
   }
 
   if(nivelActual == 'PISO'){
-    document.querySelector('#tipoPiso select').value = spanClick.parentElement.id;
+    document.querySelector('#tipoPiso select').value = data[0];
     document.querySelector('#tipoPiso select').disabled = true;
   }else{
     document.querySelector('#tipoPiso select').selectedIndex = 0;
