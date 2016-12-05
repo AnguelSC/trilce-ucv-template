@@ -8,3 +8,33 @@
     font-size: 21px;
     padding-top: 8px;
 }
+
+.checkbox-style{
+}
+.tag-bottom{
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    top: 0;
+    font-size: 7px;
+    line-height: 11px;
+    color:#fff;
+    font-family: 'Arial';
+    background-color: rgba(0,0,0,.4);
+}
+.table td{
+    vertical-align: middle !important;
+    height: 32px;
+    line-height: 32px;
+}
+.nombre-curso{
+    display: block;
+    font-size: 9px;
+    text-align: center;
+    max-height: 24px;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
