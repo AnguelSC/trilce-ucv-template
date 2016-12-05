@@ -10,6 +10,7 @@ small > button{
 
 span .btn-group{
   /*display: none;*/
+  margin-left: 5px;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
@@ -19,4 +20,14 @@ span:hover .btn-group{
   /*display: block;*/
   visibility: visible;
   opacity: 1;
+}
+
+.btn-default{
+    background: #fff!important;
+    border-color: #fff!important;
+    outline: none;
+}
+
+.btn-default:hover{
+  background: #fff!important;
 }
