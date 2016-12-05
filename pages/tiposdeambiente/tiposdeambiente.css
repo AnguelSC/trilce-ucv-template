@@ -1,0 +1,22 @@
+table{
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+table th:nth-child(1){
+  display: none;
+}
+
+table td:nth-child(1){
+  display: none;
+}
+
+button{
+
+}
+
+td:nth-child(2), td:nth-child(2) input{
+  padding-left: 10px!important;
+  text-align: left!important;
+}

@@ -329,20 +329,23 @@ function editarElemento(data,nivelActual){
 
   //Valor de Descripcion y Es Vigente
   document.querySelector('#descripcion input').value = data[1];
+	document.querySelector('#EsVigente input').disabled = false;
   if(nivelActual == 'FILIAL') document.querySelector('#EsVigente input').checked = returnValue[16];
   if(nivelActual == 'LOCAL') document.querySelector('#EsVigente input').checked = returnValue[14];
   if(nivelActual == 'PABELLON') document.querySelector('#EsVigente input').checked = returnValue[12];
-  //if(nivelActual == 'PISO') document.querySelector('#EsVigente input').checked = true;
   if(nivelActual == 'AMBIENTE') document.querySelector('#EsVigente input').checked = returnValue[14];
 
   if(nivelActual == 'AMBIENTE'){
     document.querySelector('#tipoAmbiente').style.display = 'block';
     document.querySelector('#categoriaAmbiente').style.display = 'block';
     document.querySelector('#tipoPiso').style.display = 'block';
+		document.querySelector('#area').style.display = 'block';
+
   }else{
     document.querySelector('#tipoAmbiente').style.display = 'none';
     document.querySelector('#categoriaAmbiente').style.display = 'none';
     document.querySelector('#tipoPiso').style.display = 'none';
+		document.querySelector('#area').style.display = 'none';
   }
 }
 
