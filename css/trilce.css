@@ -283,8 +283,6 @@ textarea{
     font-size: 12px;
 }
 .table tr.col-input > td{
-    height: 28px;
-    line-height: 28px;
 }
 .table .form-control{
     height: 28px;
@@ -297,12 +295,24 @@ textarea{
 .table thead tr.thead-mini th{
     font-size: 11px;
 }
+.table .checkbox-style{
+    padding: 0;
+}
+.table .checkbox-style label{
+    padding-left: 0;
+}
+.table .checkbox-style label:before{
+    position: relative !important;
+    top: 0;
+}
 /*--------CHECKBOX-----------*/
 .checkbox-style{
     position: relative;
     margin:0 auto;
 }
 .checkbox-style > input[type=checkbox]:checked + label:before{
+    content: "\6e";
+    color: #fff;
     background: #0771B1;
 }
 
@@ -316,6 +326,7 @@ textarea{
 .checkbox-style > label:before{
     position: absolute;
     content: "";
+    font-family: 'trilce';
     cursor: pointer;
     display: block;
     width: 16px;
