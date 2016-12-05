@@ -311,6 +311,7 @@ textarea{
     margin:0 auto;
 }
 .checkbox-style > input[type=checkbox]:checked + label:before{
+    font-family: "trilce";
     content: "\6e";
     color: #fff;
     background: #0771B1;
@@ -569,7 +570,7 @@ table .checkbox-style label:before{
     left: 70px;
     right: -16px;
     top: 5px;
-    border-radius: 4px 0 0 4px; 
+    border-radius: 4px 0 0 4px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -592,7 +593,7 @@ table .checkbox-style label:before{
     border-left:1px solid #ddd;
     border-top:1px solid #ddd;
     border-bottom:1px solid #ddd;
-    
+
 }
 /*.tabs-v > li > a:hover:before {
     border: solid;

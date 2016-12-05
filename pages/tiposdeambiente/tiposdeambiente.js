@@ -27,6 +27,8 @@ function editar(boton){
     filaPiso.childNodes[1].childNodes[0].focus();
 }
 
+
+
 function cancelar(boton,action){
   var filaPiso =  boton.parentElement.parentElement.parentElement;
   console.log(filaPiso);
